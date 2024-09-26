@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Sandi Junker
 Joanna Gohnert
+=======
+Sandi J Junker
+>>>>>>> bd67668ad45a7056a0f6b3e4e1c5815181495c4d
 
 https://trello.com/b/Zc24YaXO/web-development-ii
