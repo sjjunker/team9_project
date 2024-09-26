@@ -3,7 +3,6 @@ import { findProductById } from "./productData.mjs";
 
 function addProductToCart(product) {
   const cartList = JSON.parse(localStorage.getItem("so-cart")) || [];
-
   cartList.push(product);
   
   setLocalStorage("so-cart", cartList);
