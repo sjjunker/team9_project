@@ -253,6 +253,11 @@ button {
   grid-column: 3;
 }
 
+.cart-footer {
+  display: none;
+  margin: 0px 12px 40px;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
