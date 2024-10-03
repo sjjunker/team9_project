@@ -1,7 +1,9 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
+
+  // Use empty array when getLocalStorage returns null
+  const cartItems = getLocalStorage("so-cart") || [];
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
@@ -46,10 +48,15 @@ function totalCost(cartItems) {
   }
 }
 
+//Updated this function so that an empty cart does not return sum as undefined by defaulting it to $0.00
 function displayTotal(cartItems) {
   const sum = totalCost(cartItems);
 
-  cartTotal.textContent = sum.toFixed(2);
+  if (typeof sum === 'number') {
+    cartTotal.textContent = sum.toFixed(2);
+  } else {
+    cartTotal.textContent = '0.00';
+  }
 }
 
 renderCartContents();
