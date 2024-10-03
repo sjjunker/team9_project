@@ -3,5 +3,5 @@ let cartIcon = document.querySelector(".cart");
 
 //Eventlistener
 addToCartButton.addEventListener("click", () => {
-    cartIcon.classList.add('apply-shake');
+  cartIcon.classList.add("apply-shake");
 });

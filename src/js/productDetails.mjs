@@ -4,7 +4,7 @@ import { findProductById } from "./productData.mjs";
 var product = {};
 
 export default async function productDetails(productId) {
-  product = await findProductById(productId);
+  product = await findProductById(productId)
   renderProductDetails();
   document.getElementById("addToCart").addEventListener("click", addProductToCart(product));
 }
