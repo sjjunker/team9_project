@@ -1,5 +1,12 @@
 {
-  "ExpandedNodes": [""],
-  "SelectedNode": "\\team.txt",
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\cart",
+    "\\src\\checkout",
+    "\\src\\js",
+    "\\src\\product_pages"
+  ],
+  "SelectedNode": "\\src\\js\\product.js",
   "PreviewInSolutionExplorer": false
 }

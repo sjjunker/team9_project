@@ -5,8 +5,15 @@ var product = {};
 
 export default async function productDetails(productId) {
   product = await findProductById(productId)
-  renderProductDetails();
+  if (product != null) {
+    renderProductDetails();
   document.getElementById("addToCart").addEventListener("click", addProductToCart(product));
+  }
+  else {
+    document.querySelector('#productNameWithoutBrand').innerText = "Error";
+    document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
+    document.querySelector('#addToCart').remove();
+  }
 }
 
 function addProductToCart(product) {
