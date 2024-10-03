@@ -6,10 +6,10 @@ var product = {};
 export default async function productDetails(productId) {
   product = await findProductById(productId)
   renderProductDetails();
-  document.getElementById("addToCart").addEventListener("click", addToCartHandler);
+  document.getElementById("addToCart").addEventListener("click", addProductToCart);
 }
 
-function addProductToCart(product) {
+function addProductToCart() {
   // Retrieve the existing cart from localStorage, ensure it's an array or default to an empty array
   let cart = JSON.parse(localStorage.getItem("so-cart"));
 
@@ -23,10 +23,6 @@ function addProductToCart(product) {
 
   // Save the updated cart back to localStorage
   setLocalStorage("so-cart", cart);
-}
-async function addToCartHandler(e) {
-  const product = await findProductById(e.target.dataset.id);
-  addProductToCart(product);
 }
 
 function renderProductDetails() {
