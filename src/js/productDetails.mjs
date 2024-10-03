@@ -4,14 +4,14 @@ import { findProductById } from "./productData.mjs";
 var product = {};
 
 export default async function productDetails(productId) {
-  product = await findProductById(productId)
+  product = await findProductById(productId);
   renderProductDetails();
-  document.getElementById("addToCart").addEventListener("click", addProductToCart(product));
+  document.getElementById("addToCart").addEventListener("click", addProductToCart);
 }
 
-function addProductToCart(product) {
+function addProductToCart() {
   // Retrieve the existing cart from localStorage, ensure it's an array or default to an empty array
-  let cart = JSON.parse(localStorage.getItem("so-cart"));
+  var cart = JSON.parse(localStorage.getItem("so-cart"));
 
   // Check if cart is not an array, reset to an empty array if needed
   if (!Array.isArray(cart)) {
