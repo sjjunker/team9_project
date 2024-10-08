@@ -5,18 +5,22 @@ var product = {};
 
 export default async function productDetails(productId) {
   product = await findProductById(productId)
+
   if (product != null) {
     renderProductDetails();
-  document.getElementById("addToCart").addEventListener("click", addProductToCart(product));
+  document.getElementById("addToCart").addEventListener("click", addProductToCart);
   }
   else {
     document.querySelector('#productNameWithoutBrand').innerText = "Error";
     document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
     document.querySelector('#addToCart').remove();
   }
+
+  renderProductDetails();
+  document.getElementById("addToCart").addEventListener("click", addProductToCart);
 }
 
-function addProductToCart(product) {
+function addProductToCart() {
   // Retrieve the existing cart from localStorage, ensure it's an array or default to an empty array
   let cart = JSON.parse(localStorage.getItem("so-cart"));
 
