@@ -5,6 +5,17 @@ var product = {};
 
 export default async function productDetails(productId) {
   product = await findProductById(productId)
+
+  if (product != null) {
+    renderProductDetails();
+  document.getElementById("addToCart").addEventListener("click", addProductToCart);
+  }
+  else {
+    document.querySelector('#productNameWithoutBrand').innerText = "Error";
+    document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
+    document.querySelector('#addToCart').remove();
+  }
+
   renderProductDetails();
   document.getElementById("addToCart").addEventListener("click", addProductToCart);
 }

@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\team.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:team.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productData.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\productData.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productDetails.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\productDetails.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\cart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\utils.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\utils.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\product_pages\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\product_pages\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\checkout\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\checkout\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\cart\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\cart\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\.eslintrc.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.eslintrc.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +46,147 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "team.txt",
-              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\team.txt",
-              "RelativeDocumentMoniker": "team.txt",
-              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\team.txt",
-              "RelativeToolTip": "team.txt",
+              "DocumentIndex": 2,
+              "Title": "product.js",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\product.js",
+              "RelativeDocumentMoniker": "src\\js\\product.js",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\product.js",
+              "RelativeToolTip": "src\\js\\product.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-09-26T16:32:47.405Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-03T20:47:40.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "productDetails.mjs",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productDetails.mjs",
+              "RelativeDocumentMoniker": "src\\js\\productDetails.mjs",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productDetails.mjs",
+              "RelativeToolTip": "src\\js\\productDetails.mjs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-03T20:42:35.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "productData.mjs",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productData.mjs",
+              "RelativeDocumentMoniker": "src\\js\\productData.mjs",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productData.mjs",
+              "RelativeToolTip": "src\\js\\productData.mjs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-27T23:14:46.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\product_pages\\index.html",
+              "RelativeDocumentMoniker": "src\\product_pages\\index.html",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\product_pages\\index.html",
+              "RelativeToolTip": "src\\product_pages\\index.html",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-10-03T20:38:35.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": ".eslintrc.json",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\.eslintrc.json",
+              "RelativeDocumentMoniker": ".eslintrc.json",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\.eslintrc.json",
+              "RelativeToolTip": ".eslintrc.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-03T17:23:29.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\cart\\index.html",
+              "RelativeDocumentMoniker": "src\\cart\\index.html",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\cart\\index.html",
+              "RelativeToolTip": "src\\cart\\index.html",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAF8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-27T22:58:39.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\checkout\\index.html",
+              "RelativeDocumentMoniker": "src\\checkout\\index.html",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\checkout\\index.html",
+              "RelativeToolTip": "src\\checkout\\index.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-27T23:15:05.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "utils.mjs",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\utils.mjs",
+              "RelativeDocumentMoniker": "src\\js\\utils.mjs",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\utils.mjs",
+              "RelativeToolTip": "src\\js\\utils.mjs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIAwwAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-27T23:09:06.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "cart.js",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\cart.js",
+              "RelativeDocumentMoniker": "src\\js\\cart.js",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\cart.js",
+              "RelativeToolTip": "src\\js\\cart.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-27T23:08:13.971Z",
               "EditorCaption": ""
             }
           ]
