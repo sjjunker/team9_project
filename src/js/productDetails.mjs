@@ -41,7 +41,18 @@ function renderProductDetails() {
   document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
   document.querySelector('#productImage').src = product.Image;
   document.querySelector('#productImage').alt = product.Name;
-  document.querySelector('#productFinalPrice').innerText = product.FinalPrice;
+  document.querySelector('#productFinalPrice').innerText = `$${product.FinalPrice}`;
+
+  if  (product.FinalPrice < product.SuggestedRetailPrice) {
+    document.querySelector('#productdiscountPrice').innerHTML = `
+    <span style="text-decoration: line-through; color: grey">$${product.SuggestedRetailPrice}</span>
+    Save $${(product.SuggestedRetailPrice - product.FinalPrice).toFixed(2)}
+  `;
+  }
+  else {
+    document.querySelector('#productdiscountPrice').innerText = ""
+  }
+
   document.querySelector('#productColorName').innerText = product.Colors[0].ColorName;
   document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple;
   document.querySelector('#addToCart').dataset.id = product.Id;
