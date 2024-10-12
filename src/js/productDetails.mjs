@@ -8,16 +8,13 @@ export default async function productDetails(productId) {
 
   if (product != null) {
     renderProductDetails();
-  document.getElementById("addToCart").addEventListener("click", addProductToCart);
+    document.getElementById("addToCart").addEventListener("click", addProductToCart);
   }
   else {
     document.querySelector('#productNameWithoutBrand').innerText = "Error";
     document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
     document.querySelector('#addToCart').remove();
   }
-
-  renderProductDetails();
-  document.getElementById("addToCart").addEventListener("click", addProductToCart);
 }
 
 function addProductToCart() {
