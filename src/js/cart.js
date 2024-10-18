@@ -41,13 +41,14 @@ function deleteItem() {
     const deleteButton = document.getElementById(`button${item.Id}`);
 
     deleteButton.addEventListener("click", () => {
-      const cartWithoutItem = cartItems.filter((item) => item != cartItems[index]);
+      const cartWithoutItem = cartItems.filter(
+        (item) => item != cartItems[index]
+      );
       setLocalStorage("so-cart", cartWithoutItem);
       renderCartContents();
-    })
-  })
+    });
+  });
 }
-
 
 //Cart total
 const cartFooter = document.querySelector(".cart-footer");

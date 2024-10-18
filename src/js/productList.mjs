@@ -8,7 +8,26 @@ export default async function productList(selector, category) {
 
     const products = await getData(category);
 
+    let Allproducts = products;
+
     renderListWithTemplate(productCardTemplate, element, products);
+
+    const sortName = document.querySelector(".sort-name");
+    const sortPrice = document.querySelector(".sort-price");
+
+    sortName.addEventListener("click", () => {
+      Allproducts.sort((a, b) => {
+        return a.NameWithoutBrand.localeCompare(b.NameWithoutBrand);
+      })
+      renderListWithTemplate(productCardTemplate, element, products);
+    });
+
+    sortPrice.addEventListener("click", () => {
+      Allproducts.sort((a, b) => {
+          return a.FinalPrice - b.FinalPrice;
+      });
+      renderListWithTemplate(productCardTemplate, element, products);
+    });
 }
 
 function productCardTemplate(product) {

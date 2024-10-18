@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -201,6 +201,18 @@ button {
 
 .card__name {
   font-size: 1em;
+}
+
+.sort-by {
+  display: flex;
+  justify-content: flex-start;
+  width: 260px;
+}
+
+.sort-name,
+.sort-price {
+  width: 130px;
+  border-radius: 1rem;
 }
 
 /* End product list card */
