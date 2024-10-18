@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -124,6 +124,17 @@ button {
 
 .cart:hover svg {
   fill: gray;
+}
+
+/*Apply superscript styling*/
+.superscript {
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  background-color: var(--primary-color);
+  font-size: x-small;
+  border-radius: 50%;
+  width: 10px;
 }
 
 /*Apply shake to icon*/
