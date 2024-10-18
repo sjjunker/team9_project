@@ -132,15 +132,31 @@ button {
     transform: rotate(0deg);
   }
 
-  25% {
+  12.5% {
     transform: rotate(5deg);
   }
 
-  50% {
+  25% {
     transform: rotate(0eg);
   }
 
+  37.5% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  62.5% {
+    transform: rotate(5deg);
+  }
+
   75% {
+    transform: rotate(0deg);
+  }
+
+  87.5% {
     transform: rotate(-5deg);
   }
 
@@ -150,7 +166,7 @@ button {
 }
 
 .apply-shake {
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 1.64s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 /* End cart icon styles */
