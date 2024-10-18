@@ -1,6 +1,5 @@
 let addToCartButton = document.getElementById("addToCart");
 
-
 //Eventlistener
 function shake() {
   addToCartButton.addEventListener("click", () => {
@@ -16,4 +15,3 @@ function shake() {
 }
 
 shake();
-
