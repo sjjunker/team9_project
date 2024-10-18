@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -231,7 +231,6 @@ button {
   color: #303030;
   border-radius: 1rem;
   padding: 10px 15px 10px 0px;
-  /* width: 80px; */
   margin: 0%;
 }
 
@@ -241,8 +240,6 @@ button {
   color: white;
   padding: 10px;
 }
-
-
 
 /* End product list card */
 
