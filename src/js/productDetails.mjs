@@ -1,20 +1,19 @@
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage , getLocalStorage , getParam } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
 
 var product = {};
 
 export default async function productDetails(productId) {
   product = await findProductById(productId)
-
-  if (product != null) {
-    renderProductDetails();
-    document.getElementById("addToCart").addEventListener("click", addProductToCart);
-  }
-  else {
-    document.querySelector('#productNameWithoutBrand').innerText = "Error";
-    document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
-    document.querySelector('#addToCart').remove();
-  }
+    if (product != null) {
+      renderProductDetails();
+      document.getElementById("addToCart").addEventListener("click", addProductToCart);
+    }
+    else {
+      document.querySelector('#productNameWithoutBrand').innerText = "Error";
+      document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
+      document.querySelector('#addToCart').remove();
+    }
 }
 
 function addProductToCart() {
@@ -26,8 +25,16 @@ function addProductToCart() {
     cart = [];
   }
 
-  // Add the new product to the cart array
+  // Add the new product to the cart array or add to existing.
+  const productId = getParam("product");
+  const hy = cart.find((item) => item.Id === productId);
+  if (hy != null) {
+    hy.amount += 1; 
+  } else {
+    product.amount = 1;
   cart.push(product);
+  }
+
 
   // Save the updated cart back to localStorage
   setLocalStorage("so-cart", cart);
