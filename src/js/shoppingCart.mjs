@@ -24,7 +24,7 @@ function totalCost(cartItems) {
     cartFooter.style.display = "block";
 
     cartItems.forEach((item) => {
-      total += item.FinalPrice;
+      total += item.FinalPrice * item.amount;
     });
   }
 
@@ -67,7 +67,7 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
+  <p class="cart-card__quantity">qty: ${item.amount}</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
   <button type="button" class="delete_button" id="button${item.Id}"><span data-id=${item.Id}>X</span></button>
 </li>`;
