@@ -54,6 +54,7 @@ function deleteItem() {
     })
   })
 }
+
 //Create the HTML list of items
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">

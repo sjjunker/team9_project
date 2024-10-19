@@ -8,10 +8,18 @@ let cartIconDiv = document.createElement("div");
 superscriptDiv.className = "superscript";
 
 //get number of items in cart
-let cart = getLocalStorage("so-cart");
-let storageCount = cart.length;
+function calculateItems() {
+  let cart = getLocalStorage("so-cart");
+  let count = 0;
+  cart.forEach(item => {
+    count += item.amount;
+  });
+  return count;
+};
 
 //Set initial cart amount if not zero
+let storageCount = calculateItems();
+
 if (storageCount > 0) {
   superscriptDiv.innerText = `${storageCount}`;
 }
@@ -19,20 +27,28 @@ if (storageCount > 0) {
 //Listen for adding items to cart
 if (addToCartButton != null) {
   addToCartButton.addEventListener("click", () => {
-    storageCount += 1;
-    superscriptDiv.innerText = `${storageCount}`;
+
+    setTimeout(() => {
+      storageCount = calculateItems();
+      superscriptDiv.innerText = `${storageCount}`;
+    }, 500);
   });
 }
 
 //Listen for removing items from cart
 //Add listener to each button
 if (document.querySelector(".delete_button") != null) {
+
+  let cart = getLocalStorage('so-cart');
+
   cart.forEach((item) => {
     let deleteButton = document.getElementById(`button${item.Id}`);
 
     deleteButton.addEventListener("click", () => {
-      storageCount -= 1;
-      superscriptDiv.innerText = `${storageCount}`;
+      setTimeout(() => {
+        storageCount = calculateItems();
+        superscriptDiv.innerText = `${storageCount}`;
+      }, 500);
     });
   });
 }
