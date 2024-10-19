@@ -230,6 +230,28 @@ button {
   font-size: 1em;
 }
 
+.sort-by {
+  display: flex;
+  justify-content: flex-start;
+  width: 260px;
+}
+
+.sort-name,
+.sort-price {
+  background-color: white;
+  color: #303030;
+  border-radius: 1rem;
+  padding: 10px 15px 10px 0px;
+  margin: 0%;
+}
+
+.sort-name:hover,
+.sort-price:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+}
+
 /* End product list card */
 
 .product-detail {
