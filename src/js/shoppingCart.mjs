@@ -1,4 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { decrementSuperscript } from "./superscript";
 
 //Show cart items to screen
 export default function renderCartContents() {
@@ -8,6 +9,7 @@ export default function renderCartContents() {
 
   displayTotal(cartItems);
   deleteItem();
+  decrementSuperscript();
 }
 
 //Cart total

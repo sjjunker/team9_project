@@ -37,21 +37,24 @@ if (addToCartButton != null) {
 
 //Listen for removing items from cart
 //Add listener to each button
-if (document.querySelector(".delete_button") != null) {
+export function decrementSuperscript() {
+  if (document.querySelector(".delete_button") != null) {
 
-  let cart = getLocalStorage('so-cart');
+    let cart = getLocalStorage('so-cart');
 
-  cart.forEach((item) => {
-    let deleteButton = document.getElementById(`button${item.Id}`);
+    cart.forEach((item) => {
+      let deleteButton = document.getElementById(`button${item.Id}`);
 
-    deleteButton.addEventListener("click", () => {
-      setTimeout(() => {
-        storageCount = calculateItems();
-        superscriptDiv.innerText = `${storageCount}`;
-      }, 500);
+      deleteButton.addEventListener("click", () => {
+        setTimeout(() => {
+          storageCount = calculateItems();
+          superscriptDiv.innerText = `${storageCount}`;
+        }, 500);
+      });
     });
-  });
+  }
 }
+decrementSuperscript();
 
 //Listen for the load event, wait one second, then search for the cart selector
 document.addEventListener("DOMContentLoaded", () => {
