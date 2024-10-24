@@ -418,5 +418,10 @@ footer {
 /*Categories*/
 #categories {
   display: grid;
-  grid-template-columns: 1 fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 3rem;
+}
+
+#categories img {
+  margin: 2rem;
 }
