@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -415,3 +415,13 @@ footer {
   background-color: #343b03;
 }
 
+/*Categories*/
+#categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 3rem;
+}
+
+#categories img {
+  margin: 2rem;
+}
