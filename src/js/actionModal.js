@@ -1,6 +1,6 @@
 // Create modal structure
-document.addEventListener('DOMContentLoaded', () => {
-    const modalHTML = `
+document.addEventListener("DOMContentLoaded", () => {
+  const modalHTML = `
       <div id="registerModal" class="modal">
         <div class="modal-content">
           <span class="close-btn" id="closeModal">&times;</span>
@@ -14,31 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     `;
-  
-    // Insert modal into the body
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-  
-    const modal = document.getElementById('registerModal');
-    const closeModal = document.getElementById('closeModal');
-    const registerNow = document.getElementById('registerNow');
-  
-    // Check if first visit
-    if (!localStorage.getItem('visited')) {
-      modal.style.display = 'block';
-    }
-  
-    // X button to close
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-      localStorage.setItem('visited', 'true');
-    });
-  
-    // Close modal when clicking outside of it
-    window.addEventListener('click', (e) => {
-      if (e.target == modal) {
-        modal.style.display = 'none';
-        localStorage.setItem('visited', 'true');
-      }
-    });
+
+  // Insert modal into the body
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+  const modal = document.getElementById("registerModal");
+  const closeModal = document.getElementById("closeModal");
+  const registerNow = document.getElementById("registerNow");
+
+  // Check if first visit
+  if (!localStorage.getItem("visited")) {
+    modal.style.display = "block";
+  }
+
+  // X button to close
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    localStorage.setItem("visited", "true");
   });
-  
+
+  // Close modal when clicking outside of it
+  window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      modal.style.display = "none";
+      localStorage.setItem("visited", "true");
+    }
+  });
+});

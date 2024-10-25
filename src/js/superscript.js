@@ -11,11 +11,11 @@ superscriptDiv.className = "superscript";
 function calculateItems() {
   let cart = getLocalStorage("so-cart");
   let count = 0;
-  cart.forEach(item => {
+  cart.forEach((item) => {
     count += item.amount;
   });
   return count;
-};
+}
 
 //Set initial cart amount if not zero
 let storageCount = calculateItems();
@@ -27,7 +27,6 @@ if (storageCount > 0) {
 //Listen for adding items to cart
 if (addToCartButton != null) {
   addToCartButton.addEventListener("click", () => {
-
     setTimeout(() => {
       storageCount = calculateItems();
       superscriptDiv.innerText = `${storageCount}`;
@@ -39,8 +38,7 @@ if (addToCartButton != null) {
 //Add listener to each button
 export function decrementSuperscript() {
   if (document.querySelector(".delete_button") != null) {
-
-    let cart = getLocalStorage('so-cart');
+    let cart = getLocalStorage("so-cart");
 
     cart.forEach((item) => {
       let deleteButton = document.getElementById(`button${item.Id}`);
