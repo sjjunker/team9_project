@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -126,21 +126,48 @@ button {
   fill: gray;
 }
 
+/*Apply superscript styling*/
+.superscript {
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  background-color: var(--primary-color);
+  font-size: x-small;
+  border-radius: 50%;
+  width: 10px;
+}
+
 /*Apply shake to icon*/
 @keyframes shake {
   0% {
     transform: rotate(0deg);
   }
 
-  25% {
+  12.5% {
     transform: rotate(5deg);
   }
 
-  50% {
+  25% {
     transform: rotate(0eg);
   }
 
+  37.5% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  62.5% {
+    transform: rotate(5deg);
+  }
+
   75% {
+    transform: rotate(0deg);
+  }
+
+  87.5% {
     transform: rotate(-5deg);
   }
 
@@ -150,7 +177,7 @@ button {
 }
 
 .apply-shake {
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 1.64s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 /* End cart icon styles */
@@ -203,16 +230,38 @@ button {
   font-size: 1em;
 }
 
+.sort-p {
+  margin: 50px 0px 0px;
+}
+
+.sort-by {
+  display: flex;
+  justify-content: flex-start;
+  width: 260px;
+}
+
+.sort-name,
+.sort-price {
+  background-color: white;
+  color: #303030;
+  border-radius: 1rem;
+  padding: 10px 15px 10px 0px;
+  margin: 0%;
+}
+
+.sort-name:hover,
+.sort-price:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+}
+
 /* End product list card */
 
 .product-detail {
   padding: 1em;
   max-width: 500px;
   margin: auto;
-}
-
-.product-detail img {
-  width: 100%;
 }
 
 /* Start cart list card styles */
@@ -298,9 +347,191 @@ button {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+
+  /*Categories for bigger screens*/
+  #categories {
+    padding: 3rem;
+  }
+
+  #categories img {
+    margin: 2rem;
+  }
+
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 45%;
+    margin: auto 0%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 300px;
+    margin: auto 20%;
+  }
 }
 
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+/* Modal settings */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* style for the content in modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  border: 3px solid var(--primary-color);
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+/* X button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Logo in modal */
+.modal .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
+.modal img {
+  width: 50px;
+  height: auto;
+}
+
+.modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 1.2rem;
+  margin: 20px;
+}
+
+/* Register button */
+.register-btn {
+  padding: 15px 30px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.register-btn:hover {
+  background-color: #343b03;
+}
+
+/*Categories*/
+#categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0;
+}
+
+#categories img {
+  margin: 2rem;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 2rem;
+  background-color: var(--light-grey);
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5rem;
+}
+
+.newsletter h2 {
+  color: var(--secondary-color);
+  font-size: 1.em;
+}
+
+.newsletter p {
+  color: var(--dark-grey);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hidding the email label to keep it accessible instead of deleting it */
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: 1px solid var(--dark-grey);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  font-size: var(--font-base);
+}
+
+input[type='email']::placeholder {
+  text-align: center;
+}
+
+input[type='email']:focus {
+  outline: 4px solid var(--primary-color);
+  outline-offset: -4px;
+}
+
+.newsletter button {
+  padding: 0.7rem 2rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--large-font);
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #343b03;
+  margin: 0.8rem;
 }

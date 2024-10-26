@@ -1,11 +1,10 @@
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage, getParam } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
 
 var product = {};
 
 export default async function productDetails(productId) {
   product = await findProductById(productId)
-
   if (product != null) {
     renderProductDetails();
     document.getElementById("addToCart").addEventListener("click", addProductToCart);
@@ -26,8 +25,16 @@ function addProductToCart() {
     cart = [];
   }
 
-  // Add the new product to the cart array
-  cart.push(product);
+  // Add the new product to the cart array or add to existing.
+  const productId = getParam("product");
+  const hy = cart.find((item) => item.Id === productId);
+  if (hy != null) {
+    hy.amount += 1;
+  } else {
+    product.amount = 1;
+    cart.push(product);
+  }
+
 
   // Save the updated cart back to localStorage
   setLocalStorage("so-cart", cart);
@@ -36,11 +43,13 @@ function addProductToCart() {
 function renderProductDetails() {
   document.querySelector('#productName').innerText = product.Name;
   document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
-  document.querySelector('#productImage').src = product.Image;
-  document.querySelector('#productImage').alt = product.Name;
+  document.querySelector('#product-image-small').srcset = product.Images.PrimarySmall;
+  document.querySelector('#product-image-medium').srcset = product.Images.PrimaryMedium;
+  document.querySelector('#product-image-large').src = product.Images.PrimaryLarge;
+  document.querySelector('#product-image-large').alt = product.Name;
   document.querySelector('#productFinalPrice').innerText = `$${product.FinalPrice}`;
 
-  if  (product.FinalPrice < product.SuggestedRetailPrice) {
+  if (product.FinalPrice < product.SuggestedRetailPrice) {
     document.querySelector('#productdiscountPrice').innerHTML = `
     <span style="text-decoration: line-through; color: grey">$${product.SuggestedRetailPrice}</span>
     Save $${(product.SuggestedRetailPrice - product.FinalPrice).toFixed(2)}
