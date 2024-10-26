@@ -43,8 +43,10 @@ function addProductToCart() {
 function renderProductDetails() {
   document.querySelector('#productName').innerText = product.Name;
   document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
-  document.querySelector('#productImage').src = product.Images.PrimaryLarge;
-  document.querySelector('#productImage').alt = product.Name;
+  document.querySelector('#product-image-small').srcset = product.Images.PrimarySmall;
+  document.querySelector('#product-image-medium').srcset = product.Images.PrimaryMedium;
+  document.querySelector('#product-image-large').src = product.Images.PrimaryLarge;
+  document.querySelector('#product-image-large').alt = product.Name;
   document.querySelector('#productFinalPrice').innerText = `$${product.FinalPrice}`;
 
   if (product.FinalPrice < product.SuggestedRetailPrice) {

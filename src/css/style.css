@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -230,6 +230,10 @@ button {
   font-size: 1em;
 }
 
+.sort-p {
+  margin: 50px 0px 0px;
+}
+
 .sort-by {
   display: flex;
   justify-content: flex-start;
@@ -258,10 +262,6 @@ button {
   padding: 1em;
   max-width: 500px;
   margin: auto;
-}
-
-.product-detail img {
-  width: 100%;
 }
 
 /* Start cart list card styles */
@@ -327,6 +327,29 @@ button {
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
+  }
+
+  /*Categories for bigger screens*/
+  #categories {
+    padding: 3rem;
+  }
+
+  #categories img {
+    margin: 2rem;
+  }
+
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 45%;
+    margin: auto 0%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 300px;
+    margin: auto 20%;
   }
 }
 
@@ -419,7 +442,7 @@ footer {
 #categories {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 3rem;
+  padding: 0;
 }
 
 #categories img {
@@ -491,4 +514,5 @@ input[type='email']:focus {
 
 .newsletter button:hover {
   background-color: #343b03;
+  margin: 0.8rem;
 }
