@@ -1,9 +1,7 @@
-// TODO: filter our list of products to just the 4 we need.
-
 import { getData } from "./productData.mjs";
 import { renderListWithTemplate } from './utils.mjs';
 
-export default async function productList(selector, category) {
+export async function productList(selector, category) {
   const element = document.querySelector(selector);
 
   const products = await getData(category);
@@ -32,7 +30,7 @@ export default async function productList(selector, category) {
   });
 }
 
-function productCardTemplate(product) {
+export function productCardTemplate(product) {
   let discount = Math.round(100 - (product.FinalPrice / product.SuggestedRetailPrice * 100));
 
   return `<li class="product-card">

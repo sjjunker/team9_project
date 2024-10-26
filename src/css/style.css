@@ -55,6 +55,15 @@ header {
   color: var(--font-body);
 }
 
+/*Search bar*/
+.search-bar {
+  align-self: center;
+}
+
+.search-bar input {
+  font-size: 16px;
+}
+
 .hero {
   position: relative;
 }
@@ -85,7 +94,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
