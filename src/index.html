@@ -43,8 +43,6 @@
         <img src="https://byui-cit.github.io/wdd330/images/category-icons/noun_Hammock_791143.svg"
           alt="Hammock Icon from Noun Project: Paul Richard" /></a>
     </section>
-
-
     <!--<section class="products">
       <h2>Top Products</h2>
       <p>Sort</p>
@@ -54,11 +52,21 @@
       </div>
       <ul class="product-list"></ul>
     </section>-->
+    <section id="newsletter" class="newsletter">
+      <h2>Great Outdoors Newsletter</h2>
+      <p>Singup up for our newsletter to stay up-to-date on our latest events, products, and offers!</p>
+      <form action="/submit-newsletter" method="post">
+        <label for="email" class="sr-only">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
   </main>
   <footer id="main-footer"></footer>
   <script src="js/main.js" type="module"></script>
   <script src="js/superscript.js" type="module"></script>
   <script src="/js/actionModal.js" defer></script>
+  <script src="/js/newsletter.js"></script>
 </body>
 
 </html>
