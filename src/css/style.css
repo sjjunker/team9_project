@@ -314,6 +314,25 @@ button {
   margin: 0px 12px 40px;
 }
 
+/* Alert List */
+.alert-list {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Alert Paragraphs */
+.alert-list p {
+  text-align: center;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
