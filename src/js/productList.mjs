@@ -35,10 +35,13 @@ export function productCardTemplate(product) {
 
   return `<li class="product-card">
     <a href="/product_pages/index.html?product=${product.Id}">
-    <img
-      src="${product.Images.PrimaryMedium}"
-      alt="Image of ${product.Name}"
-    />
+    <picture>
+        <source srcset="${product.Images.PrimarySmall}" media="(max-width: 500px)">
+        <source srcset="${product.Images.PrimaryMedium}" media="(max-width: 1000px)">
+        <img src="${product.Images.PrimaryLarge}"
+        alt="Image of ${product.Name}"
+      />
+    <picture>
     <h3 class="card__brand">${product.Brand.Name}</h3>
     <h2 class="card__name">${product.NameWithoutBrand}</h2>
     <p class="product-card__price">$${product.FinalPrice} ~${discount}% off</p></a>

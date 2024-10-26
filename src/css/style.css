@@ -239,6 +239,10 @@ button {
   font-size: 1em;
 }
 
+.sort-p {
+  margin: 50px 0px 0px;
+}
+
 .sort-by {
   display: flex;
   justify-content: flex-start;
@@ -267,10 +271,6 @@ button {
   padding: 1em;
   max-width: 500px;
   margin: auto;
-}
-
-.product-detail img {
-  width: 100%;
 }
 
 /* Start cart list card styles */
@@ -323,6 +323,25 @@ button {
   margin: 0px 12px 40px;
 }
 
+/* Alert List */
+.alert-list {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Alert Paragraphs */
+.alert-list p {
+  text-align: center;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -336,6 +355,29 @@ button {
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
+  }
+
+  /*Categories for bigger screens*/
+  #categories {
+    padding: 3rem;
+  }
+
+  #categories img {
+    margin: 2rem;
+  }
+
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 45%;
+    margin: auto 0%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /*Product image for bigger screens*/
+  .product-detail img {
+    width: 300px;
+    margin: auto 20%;
   }
 }
 
@@ -396,12 +438,12 @@ footer {
 }
 
 .modal h2 {
-  font-size: 28px;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
 .modal p {
-  font-size: 18px;
+  font-size: 1.2rem;
   margin: 20px;
 }
 
@@ -410,7 +452,7 @@ footer {
   padding: 15px 30px;
   background-color: var(--secondary-color);
   color: white;
-  font-size: 18px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -428,9 +470,78 @@ footer {
 #categories {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 3rem;
+  padding: 0;
 }
 
 #categories img {
   margin: 2rem;
 }
+
+/* Newsletter */
+.newsletter {
+  padding: 2rem;
+  background-color: var(--light-grey);
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5rem;
+}
+
+.newsletter h2 {
+  color: var(--secondary-color);
+  font-size: 1.em;
+}
+
+.newsletter p {
+  color: var(--dark-grey);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hidding the email label to keep it accessible instead of deleting it */
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: 1px solid var(--dark-grey);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  font-size: var(--font-base);
+}
+
+input[type='email']::placeholder {
+  text-align: center;
+}
+
+input[type='email']:focus {
+  outline: 4px solid var(--primary-color);
+  outline-offset: -4px;
+}
+
+.newsletter button {
+  padding: 0.7rem 2rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--large-font);
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #343b03;
+  margin: 0.8rem;
+}
+
