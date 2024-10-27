@@ -54,6 +54,35 @@ export function decrementSuperscript() {
 }
 decrementSuperscript();
 
+//Listen for item quantity change
+export function plusMinusSuperscript() {
+  if (document.querySelector(".delete_button") != null) {
+    let cart = getLocalStorage("so-cart");
+
+    cart.forEach((item) => {
+      const minusButton = document.getElementById(`Mbutton${item.Id}`);
+      const plusButton = document.getElementById(`Pbutton${item.Id}`);
+
+      //Minus button
+      minusButton.addEventListener("click", () => {
+        setTimeout(() => {
+          storageCount = calculateItems();
+          superscriptDiv.innerText = `${storageCount}`;
+        }, 500);
+      });
+
+      //Plus button
+      plusButton.addEventListener("click", () => {
+        setTimeout(() => {
+          storageCount = calculateItems();
+          superscriptDiv.innerText = `${storageCount}`;
+        }, 500);
+      });
+    });
+  }
+}
+plusMinusSuperscript();
+
 //Listen for the load event, wait one second, then search for the cart selector
 document.addEventListener("DOMContentLoaded", () => {
   //get the cart icon containing div
