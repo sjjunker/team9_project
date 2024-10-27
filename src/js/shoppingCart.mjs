@@ -1,5 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
-import { decrementSuperscript } from "./superscript";
+import { decrementSuperscript, plusMinusSuperscript } from "./superscript";
 
 //Show cart items to screen
 export default function renderCartContents() {
@@ -9,7 +9,9 @@ export default function renderCartContents() {
 
   displayTotal(cartItems);
   deleteItem();
+  changeItem();
   decrementSuperscript();
+  plusMinusSuperscript();
 }
 
 //Cart total
@@ -57,6 +59,31 @@ function deleteItem() {
   })
 }
 
+//Attach eventListener to the plus/minus-button
+function changeItem() {
+  //Grab localstorage
+  const cartItems = getLocalStorage("so-cart");
+
+  //Add listener to each button
+  cartItems.forEach((item, index) => {
+    const minusButton = document.getElementById(`Mbutton${item.Id}`);
+    const plusButton = document.getElementById(`Pbutton${item.Id}`);
+
+    minusButton.addEventListener("click", () => {
+      if (cartItems[index].amount > 0) {
+        cartItems[index].amount -= 1;
+        setLocalStorage("so-cart", cartItems);
+        renderCartContents();
+      }
+    })
+    plusButton.addEventListener("click", () => {
+      cartItems[index].amount += 1;
+      setLocalStorage("so-cart", cartItems);
+      renderCartContents();
+    })
+  })
+}
+
 //Create the HTML list of items
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
@@ -70,7 +97,7 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: ${item.amount}</p>
+  <div><p class="cart-card__quantity">qty: ${item.amount}</p><div class="quantity"><button type="button" class="minus_button" id="Mbutton${item.Id}"><span data-id=${item.Id}>-</span></button><button type="button" class="plus_button" id="Pbutton${item.Id}"><span data-id=${item.Id}>+</span></button></div></div>
   <p class="cart-card__price">$${item.FinalPrice}</p>
   <button type="button" class="delete_button" id="button${item.Id}"><span data-id=${item.Id}>X</span></button>
 </li>`;
