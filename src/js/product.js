@@ -1,10 +1,10 @@
 import { getParam } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
-import { loadAlerts } from './alerts.js';
+import { loadAlerts } from "./alerts.js";
 
 // Call the function to load and display alerts
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   loadAlerts();
 });
 

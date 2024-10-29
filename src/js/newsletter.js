@@ -1,4 +1,6 @@
-document.querySelector("#newsletter form").addEventListener("submit", function(event) {
+document
+  .querySelector("#newsletter form")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
     const email = document.querySelector("#email").value;
     if (email) {
