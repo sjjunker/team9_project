@@ -20,7 +20,10 @@ window.addEventListener("resize", () => {
 });
 
 //Set breadcrumbs
-const product = await findProductById(productId);
-let category = product.Category;
-category = category.charAt(0).toUpperCase() + category.substring(1);
-setBreadcrumbs(category, []);
+async function breadcrumbs() {
+  const product = await findProductById(productId);
+  let category = product.Category;
+  category = category.charAt(0).toUpperCase() + category.substring(1);
+  setBreadcrumbs(category, []);
+}
+breadcrumbs();

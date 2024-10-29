@@ -37,7 +37,6 @@ header {
 
 .breadcrumbs {
   font-size: smaller;
-
 }
 
 .logo {
@@ -99,7 +98,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -397,7 +396,6 @@ button {
 }
 
 @media screen and (min-width: 1000px) {
-
   /*Product image for bigger screens*/
   .product-detail img {
     width: 300px;
