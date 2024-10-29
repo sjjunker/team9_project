@@ -55,6 +55,15 @@ header {
   color: var(--font-body);
 }
 
+/*Search bar*/
+.search-bar {
+  align-self: center;
+}
+
+.search-bar input {
+  font-size: 16px;
+}
+
 .hero {
   position: relative;
 }
@@ -555,6 +564,7 @@ input[type='email']:focus {
   background-color: #343b03;
   margin: 0.8rem;
 }
+
 
 /*#endregion Newsletter*/
 
