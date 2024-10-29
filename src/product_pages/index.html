@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
 
-    <title>Sleep Outside | Cedar Ridge Rimrock 2-person tent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../css/style.css" />
+  <title>Sleep Outside | Cedar Ridge Rimrock 2-person tent</title>
 
-    <script src="../js/product.js" type="module"></script>
-    <script src="../js/shake.js" defer></script>
-    <script src="../js/superscript.js" type="module" defer></script>
-  </head>
+  <link rel="stylesheet" href="../css/style.css" />
 
-  <body>
-    <header class="divider" id="main-header"></header>
+  <script src="../js/product.js" type="module"></script>
+  <script src="../js/shake.js" defer></script>
+  <script src="../js/superscript.js" type="module" defer></script>
+</head>
 
-    <main class="divider">
-      <section class="product-detail">
-        <h3 id="productName"></h3>
+<body>
+  <header class="divider" id="main-header"></header>
 
-        <h2 class="divider" id="productNameWithoutBrand"></h2>
+  <main class="divider">
+    <section class="product-detail">
+      <h3 id="productName"></h3>
 
-        <picture>
-          <source
-            id="product-image-small"
-            media="(max-width: 500px)"
-            srcset=""
-          />
-          <source
-            id="product-image-medium"
-            media="(max-width: 1000px)"
-            srcset=""
-          />
-          <img id="product-image-large" class="divider" src="" alt="" />
-        </picture>
+      <h2 class="divider" id="productNameWithoutBrand"></h2>
 
-        <p class="product-card__price" id="productFinalPrice"></p>
+      <!--Images-->
+      <section class="slider-wrapper divider" id="slides">
+        <button class="slide-arrow" id="slide-arrow-prev">
+          &#8249;
+        </button>
 
-        <p class="product-card__discount" id="productdiscountPrice"></p>
+        <button class="slide-arrow" id="slide-arrow-next">
+          &#8250;
+        </button>
 
-        <p class="product__color" id="productColorName"></p>
-
-        <p class="product__description" id="productDescriptionHtmlSimple"></p>
-
-        <div class="product-detail__add">
-          <button id="addToCart" data-id="344YJ">Add to Cart</button>
-        </div>
+        <ul class="slides-container" id="slides-container"></ul>
       </section>
-    </main>
 
-    <footer id="main-footer"></footer>
-    <script src="/js/search.js" type="module"></script>
-    <script src="/js/actionModal.js" defer></script>
-  </body>
-</html>
+      <picture id="pictureSize">
+        <source id="product-image-small" media="(max-width: 500px)" srcset="" />
+        <source id="product-image-medium" media="(max-width: 1000px)" srcset="" />
+        <img id="product-image-large" class="divider" src="" alt="" />
+      </picture>
+      <!--Images-->
+
+      <p class="product-card__price" id="productFinalPrice"></p>
+
+      <p class="product-card__discount" id="productdiscountPrice"></p>
+
+      <p class="product__color" id="productColorName"></p>
+
+      <p class="product__description" id="productDescriptionHtmlSimple"></p>
+
+      <div class="product-detail__add">
+        <button id="addToCart" data-id="344YJ">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer id="main-footer"></footer>
+  <script src="/js/search.js" type="module"></script>
+  <script src="/js/actionModal.js" defer></script>
+</body>
+

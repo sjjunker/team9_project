@@ -12,3 +12,6 @@ loadHeaderFooter();
 
 const productId = getParam("product");
 productDetails(productId);
+window.addEventListener("resize", () => {
+  productDetails(productId);
+});
