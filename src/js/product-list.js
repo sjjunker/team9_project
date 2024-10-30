@@ -1,4 +1,4 @@
-import { productList } from "./productList.mjs";
+import { productList, recommendedProducts } from "./productList.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
 
 //Load page depending on whether it is called via link
@@ -8,6 +8,8 @@ if (category != null) {
 
   let title = document.querySelector("h2");
   title.innerHTML = category;
+
+  recommendedProducts();
 }
 
 loadHeaderFooter();

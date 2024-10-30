@@ -225,6 +225,14 @@ button {
   max-width: 250px;
 }
 
+#recommended-product-list {
+  justify-content: space-evenly;
+}
+
+#recommended-product-list li {
+  border: 3px solid var(--primary-color);
+}
+
 .product-card h2,
 .product-card h3,
 .product-card p {
