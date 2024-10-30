@@ -35,6 +35,10 @@ header {
   padding: 0 10px;
 }
 
+.breadcrumbs {
+  font-size: smaller;
+}
+
 .logo {
   line-height: 60px;
   width: 245px;
