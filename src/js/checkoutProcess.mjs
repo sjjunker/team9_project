@@ -1,11 +1,36 @@
 import { getLocalStorage } from "./utils.mjs";
+import { checkout } from "./externalServices.mjs";
+
+function formDataToJSON(formElement) {
+    const formData = new FormData(formElement),
+        convertedJSON = {};
+
+    formData.forEach(function (value, key) {
+        convertedJSON[key] = value;
+    });
+
+    return convertedJSON;
+}
+
+// takes the items currently stored in the cart (localstorage) and returns them in a simplified form.
+function packageItems(items) {
+    const simplifiedItems = items.map((item) => {
+        return {
+            id: item.Id,
+            price: item.FinalPrice,
+            name: item.Name,
+            quantity: 1,
+        };
+    });
+    return simplifiedItems;
+}
 
 const checkoutProcess = {
     itemTotal: 0,
-    shipping: 10.00,
+    shipping: 0.00,
     addShipping: 2.00,
-    tax: 0,
-    orderTotal: 0,
+    tax: 0.0,
+    orderTotal: 0.0,
     storageKey: "",
     selector: "",
     list: [],
@@ -20,10 +45,10 @@ const checkoutProcess = {
 
     calculateItemSummary: function () {
         const summaryElement = document.querySelector(
-            this.outputSelector + " #cartTotal"
+            this.selector + " #cartTotal"
         );
         const itemNumElement = document.querySelector(
-            this.outputSelector + " #num-items"
+            this.selector + " #num-items"
         );
         itemNumElement.innerText = this.list.length;
 
@@ -34,10 +59,9 @@ const checkoutProcess = {
     },
 
     calculateOrderTotal: function () {
+
         this.tax = (this.itemTotal * 0.06);
-        if (itemTotal > 1) {
-            this.shipping += (itemTotal - 1) * addShipping;
-        }
+        this.shipping = 10 + ((this.list.length - 1) * 2);
         this.orderTotal = (
             parseFloat(this.itemTotal) +
             parseFloat(this.shipping) +
@@ -47,15 +71,33 @@ const checkoutProcess = {
     },
 
     displayOrder: function () {
-        const shipping = document.querySelector(this.outputSelector + " #shipping");
+        const shipping = document.querySelector(this.selector + " #shipping");
         shipping.innerText = "$" + this.shipping.toFixed(2);
 
-        const tax = document.querySelector(this.outputSelector + " #tax");
+        const tax = document.querySelector(this.selector + " #tax");
         tax.innerText = "$" + this.tax.toFixed(2);
 
-        const orderTotal = document.querySelector(this.selector + " #orderTotal");
-        orderTotal.innerText = "$" + this.subTotal.toFixed(2);
-    }
-}
+        const orderTotalParagraph = document.querySelector(this.selector + " #orderTotal");
+        orderTotalParagraph.innerText = "$" + (this.orderTotal).toFixed(2);
+    },
+
+    checkout: async function (form) {
+        const json = formDataToJSON(form);
+
+        // add totals, and item details
+        json.orderDate = new Date();
+        json.orderTotal = this.orderTotal;
+        json.tax = this.tax;
+        json.shipping = this.shipping;
+        json.items = packageItems(this.list);
+
+        try {
+            const res = await checkout(json);
+            console.log(res);
+        } catch (err) {
+            console.log(err);
+        }
+    },
+};
 
 export default checkoutProcess;
