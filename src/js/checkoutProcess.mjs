@@ -4,46 +4,57 @@ const checkoutProcess = {
     itemTotal: 0,
     shipping: 10.00,
     addShipping: 2.00,
-    tax: .06,
-    subTotal: 0,
+    tax: 0,
     orderTotal: 0,
     storageKey: "",
     selector: "",
     list: [],
 
-    init: function(storageKey, selector) {
+    init: function (storageKey, selector) {
         this.storageKey = storageKey;
         this.selector = selector;
         this.list = getLocalStorage(storageKey);
-        this.calculateSubtotal();
-        
+
+        this.calculateItemSummary();
     },
 
-    calculateSubtotal: function()  {
-        this.list.forEach(product => {
-            this.subTotal += product.FinalPrice * product.amount
+    calculateItemSummary: function () {
+        const summaryElement = document.querySelector(
+            this.outputSelector + " #cartTotal"
+        );
+        const itemNumElement = document.querySelector(
+            this.outputSelector + " #num-items"
+        );
+        itemNumElement.innerText = this.list.length;
 
-        });
+        // calculate the total of all the items in the cart
+        const amounts = this.list.map((item) => item.FinalPrice);
+        this.itemTotal = amounts.reduce((sum, item) => sum + item);
+        summaryElement.innerText = "$" + this.itemTotal;
+    },
+
+    calculateOrderTotal: function () {
+        this.tax = (this.itemTotal * 0.06);
+        if (itemTotal > 1) {
+            this.shipping += (itemTotal - 1) * addShipping;
+        }
+        this.orderTotal = (
+            parseFloat(this.itemTotal) +
+            parseFloat(this.shipping) +
+            parseFloat(this.tax)
+        );
         this.displayOrder();
     },
 
-    calculateOrderTotal: function() {
-        var taxTotal = subTotal + (subTotal * tax);
-        if (itemTotal > 1) {
-            shipping += (itemTotal - 1) * addShipping;
-        }
-        taxTotal += shipping;
-    },
+    displayOrder: function () {
+        const shipping = document.querySelector(this.outputSelector + " #shipping");
+        shipping.innerText = "$" + this.shipping.toFixed(2);
 
-    caclculateItemTotal: function() {
-        list.forEach(product => {
-            itemTotal += product.quantity;
-        });
-    },
+        const tax = document.querySelector(this.outputSelector + " #tax");
+        tax.innerText = "$" + this.tax.toFixed(2);
 
-    displayOrder: function() {
-        const orderTotal = document.querySelector(this.selector + " #cartTotal");
-        orderTotal.innerText = "$" + this.subTotal;
+        const orderTotal = document.querySelector(this.selector + " #orderTotal");
+        orderTotal.innerText = "$" + this.subTotal.toFixed(2);
     }
 }
 
