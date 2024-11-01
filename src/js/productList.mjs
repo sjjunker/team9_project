@@ -53,10 +53,10 @@ export function productCardTemplate(product) {
 
 export async function recommendedProducts() {
   //Get each category
-  const tentProducts = await getData("tents");
-  const backpackProducts = await getData("backpacks");
-  const hammockProducts = await getData("hammocks");
-  const sleepingBagProducts = await getData("sleeping-bags");
+  const tentProducts = await getProductsByCategory("tents");
+  const backpackProducts = await getProductsByCategory("backpacks");
+  const hammockProducts = await getProductsByCategory("hammocks");
+  const sleepingBagProducts = await getProductsByCategory("sleeping-bags");
 
   //Compile into one array
   const allProducts = [...tentProducts, ...backpackProducts, ...hammockProducts, ...sleepingBagProducts];
