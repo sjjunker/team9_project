@@ -29,7 +29,7 @@ export async function productList(selector, category) {
     renderListWithTemplate(productCardTemplate, element, products);
   });
 
-  // Displays the modal details of the products quickly on the product list page
+  // Displays the modal details of the products quickly on the product list page.
   element.addEventListener("click", (event) => {
     if (event.target.classList.contains("view_button")) {
       

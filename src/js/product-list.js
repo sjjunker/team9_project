@@ -17,9 +17,9 @@ loadHeaderFooter();
 //Set breadcrumbs
 async function breadcrumbs() {
   let products = await getData(category);
-  let capitalizedCategory = category.charAt(0).toUpperCase() + category.substring(1);
+  let capitalizedCategory =
+    category.charAt(0).toUpperCase() + category.substring(1);
   let productQuantity = products.length;
   setBreadcrumbs(capitalizedCategory, productQuantity);
 }
 breadcrumbs();
-
