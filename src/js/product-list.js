@@ -1,6 +1,6 @@
 import { productList } from "./productList.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
-import { getData } from "./productData.mjs";
+import { getProductsByCategory } from "./externalServices.mjs";
 import setBreadcrumbs from "./breadcrumbs";
 
 //Load page depending on whether it is called via link
@@ -16,7 +16,7 @@ loadHeaderFooter();
 
 //Set breadcrumbs
 async function breadcrumbs() {
-  let products = await getData(category);
+  let products = await getProductsByCategory(category);
   let capitalizedCategory = category.charAt(0).toUpperCase() + category.substring(1);
   let productQuantity = products.length;
   setBreadcrumbs(capitalizedCategory, productQuantity);

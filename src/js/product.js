@@ -2,7 +2,7 @@ import { getParam } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 import { loadAlerts } from "./alerts.js";
-import { findProductById } from "./productData.mjs";
+import { findProductById } from "./externalServices.mjs";
 import setBreadcrumbs from "./breadcrumbs.js";
 
 loadHeaderFooter();
