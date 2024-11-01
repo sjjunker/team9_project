@@ -55,7 +55,7 @@ const checkoutProcess = {
         // calculate the total of all the items in the cart
         const amounts = this.list.map((item) => item.FinalPrice);
         this.itemTotal = amounts.reduce((sum, item) => sum + item);
-        summaryElement.innerText = "$" + this.itemTotal.toFixed(2)
+        summaryElement.innerText = "$" + this.itemTotal.toFixed(2);
     },
 
     calculateOrderTotal: function () {
@@ -86,7 +86,7 @@ const checkoutProcess = {
 
         // add totals, and item details
         json.orderDate = new Date();
-        json.orderTotal = this.orderTotal.toFixed(2);
+        json.orderTotal = this.orderTotal;
         json.tax = this.tax;
         json.shipping = this.shipping;
         json.items = packageItems(this.list);
