@@ -19,7 +19,7 @@ function packageItems(items) {
             id: item.Id,
             price: item.FinalPrice,
             name: item.Name,
-            quantity: 1,
+            quantity: 1
         };
     });
     return simplifiedItems;
@@ -87,7 +87,7 @@ const checkoutProcess = {
         // add totals, and item details
         json.orderDate = new Date();
         json.orderTotal = this.orderTotal.toFixed(2);
-        json.tax = this.tax.toFixed(2);
+        json.tax = this.tax;
         json.shipping = this.shipping;
         json.items = packageItems(this.list);
 

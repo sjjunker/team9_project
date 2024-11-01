@@ -27,9 +27,9 @@ export async function checkout(orderObject) {
   const options = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(orderObject)
+    body: JSON.stringify(orderObject),
   };
 
   //Stringify and pass to fetch using url
