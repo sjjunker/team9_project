@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\shoppingCart.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\shoppingCart.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productList.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\productList.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\externalServices.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\externalServices.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\checkoutProcess.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\js\\checkoutProcess.mjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,19 +22,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -49,43 +45,51 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\css\\style.css",
-              "RelativeDocumentMoniker": "src\\css\\style.css",
-              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\css\\style.css",
-              "RelativeToolTip": "src\\css\\style.css",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAgwAcBAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-26T22:56:37.188Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "shoppingCart.mjs",
-              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\shoppingCart.mjs",
-              "RelativeDocumentMoniker": "src\\js\\shoppingCart.mjs",
-              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\shoppingCart.mjs",
-              "RelativeToolTip": "src\\js\\shoppingCart.mjs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwGAAAAAWAAAAAAAAAA==",
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\css\\style.css",
+              "RelativeDocumentMoniker": "src\\css\\style.css",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\css\\style.css*",
+              "RelativeToolTip": "src\\css\\style.css*",
+              "ViewState": "AgIAAOABAAAAAAAAAAAmwAICAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-31T22:46:46.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "externalServices.mjs",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\externalServices.mjs",
+              "RelativeDocumentMoniker": "src\\js\\externalServices.mjs",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\externalServices.mjs",
+              "RelativeToolTip": "src\\js\\externalServices.mjs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-26T02:48:11.678Z",
+              "WhenOpened": "2024-10-31T21:29:46.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "productList.mjs",
-              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productList.mjs",
-              "RelativeDocumentMoniker": "src\\js\\productList.mjs",
-              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\productList.mjs",
-              "RelativeToolTip": "src\\js\\productList.mjs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "checkoutProcess.mjs",
+              "DocumentMoniker": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\checkoutProcess.mjs",
+              "RelativeDocumentMoniker": "src\\js\\checkoutProcess.mjs",
+              "ToolTip": "C:\\Users\\jdevo\\OneDrive\\Documents\\School Work\\WDD330\\team9_project-01\\src\\js\\checkoutProcess.mjs",
+              "RelativeToolTip": "src\\js\\checkoutProcess.mjs",
+              "ViewState": "AgIAACUAAAAAAAAAAIA6wDgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-26T02:47:30.113Z",
+              "WhenOpened": "2024-10-31T21:29:45.398Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1a46fd64-28d5-434c-8eb3-17a02d419b53}"
             }
           ]
         }

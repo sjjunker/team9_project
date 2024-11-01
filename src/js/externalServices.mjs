@@ -33,5 +33,5 @@ export async function checkout(orderObject) {
   };
 
   //Stringify and pass to fetch using url
-  return await fetch(baseURL + "checkout/", options);
+  return await fetch(baseURL + "checkout/", options).then(convertToJson);
 }
