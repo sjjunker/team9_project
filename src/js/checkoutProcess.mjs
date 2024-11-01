@@ -19,7 +19,7 @@ function packageItems(items) {
             id: item.Id,
             price: item.FinalPrice,
             name: item.Name,
-            quantity: 1
+            quantity: item.amount
         };
     });
     return simplifiedItems;
@@ -53,7 +53,7 @@ const checkoutProcess = {
         itemNumElement.innerText = this.list.length;
 
         // calculate the total of all the items in the cart
-        const amounts = this.list.map((item) => item.FinalPrice);
+        const amounts = this.list.map((item) => item.FinalPrice * item.amount);
         this.itemTotal = amounts.reduce((sum, item) => sum + item);
         summaryElement.innerText = "$" + this.itemTotal.toFixed(2);
     },
