@@ -1,4 +1,4 @@
-import { productList } from "./productList.mjs";
+import { productList, recommendedProducts } from "./productList.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
 import { getProductsByCategory } from "./externalServices.mjs";
 import setBreadcrumbs from "./breadcrumbs";
@@ -11,8 +11,10 @@ if (category != null) {
 
   let title = document.querySelector("h2");
   title.innerHTML = category;
+  recommendedProducts();
 } else {
   category = getParam("search");
+  recommendedProducts();
 }
 
 loadHeaderFooter();
