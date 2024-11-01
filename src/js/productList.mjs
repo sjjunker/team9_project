@@ -1,10 +1,12 @@
-import { getData } from "./productData.mjs";
+// TODO: filter our list of products to just the 4 we need.
+
+import { getProductsByCategory } from "./externalServices.mjs";
 import { renderListWithTemplate } from './utils.mjs';
 
 export async function productList(selector, category) {
   const element = document.querySelector(selector);
 
-  const products = await getData(category);
+  const products = await getProductsByCategory(category);
 
   let Allproducts = products;
 
