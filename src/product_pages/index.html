@@ -15,16 +15,25 @@
     <script src="../js/superscript.js" type="module" defer></script>
   </head>
 
-  <body>
+  <body id="product-pages">
     <header class="divider" id="main-header"></header>
-
+    <div class="breadcrumbs"></div>
     <main class="divider">
       <section class="product-detail">
         <h3 id="productName"></h3>
 
         <h2 class="divider" id="productNameWithoutBrand"></h2>
 
-        <picture>
+        <!--Images-->
+        <section class="slider-wrapper divider" id="slides">
+          <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
+
+          <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+
+          <ul class="slides-container" id="slides-container"></ul>
+        </section>
+
+        <picture id="pictureSize">
           <source
             id="product-image-small"
             media="(max-width: 500px)"
@@ -37,6 +46,7 @@
           />
           <img id="product-image-large" class="divider" src="" alt="" />
         </picture>
+        <!--Images-->
 
         <p class="product-card__price" id="productFinalPrice"></p>
 
@@ -53,6 +63,7 @@
     </main>
 
     <footer id="main-footer"></footer>
+    <script src="/js/search.js" type="module"></script>
     <script src="/js/actionModal.js" defer></script>
   </body>
 </html>

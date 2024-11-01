@@ -3,7 +3,7 @@
 import { getProductsByCategory } from "./externalServices.mjs";
 import { renderListWithTemplate } from './utils.mjs';
 
-export default async function productList(selector, category) {
+export async function productList(selector, category) {
   const element = document.querySelector(selector);
 
   const products = await getProductsByCategory(category);
@@ -32,7 +32,7 @@ export default async function productList(selector, category) {
   });
 }
 
-function productCardTemplate(product) {
+export function productCardTemplate(product) {
   let discount = Math.round(100 - (product.FinalPrice / product.SuggestedRetailPrice * 100));
 
   return `<li class="product-card">
