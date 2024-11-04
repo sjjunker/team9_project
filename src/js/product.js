@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //Load product details
 const productId = getParam("product");
 productDetails(productId);
-window.addEventListener("resize", () => {
+document.addEventListener("resize", () => {
   productDetails(productId);
 });
 
