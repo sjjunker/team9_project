@@ -19,7 +19,7 @@
   <main class="divider">
     <section class="products">
       <h2>Review & Place your Order</h2>
-      <form name="checkout">
+      <form name="checkout" target="success.html">
         <fieldset>
           <legend>Shipping</legend>
           <div class="checkout__name">
@@ -36,17 +36,17 @@
             <label for="state">State</label>
             <input name="state" required />
             <label for="zip">Zip</label>
-            <input name="zip" id="zip" required />
+            <input name="zip" type="number" id="zip" required />
           </div>
         </fieldset>
         <fieldset>
           <legend>Payment</legend>
           <label for="cardNumber">Card number</label>
-          <input name="cardNumber" value="1234123412341234" required />
+          <input name="cardNumber" type="number" value="1234123412341234" required />
           <label for="expiration">Expiration</label>
-          <input name="expiration" required />
+          <input name="expiration" type="date" required />
           <label for="code">Security Code</label>
-          <input name="code" value="123" required />
+          <input name="code" type="number" value="123" required />
         </fieldset>
         <fieldset class="checkout-summary">
           <legend>Order Summary</legend>
@@ -80,9 +80,4 @@
   <script src="../js/search.js" type="module"></script>
   <script src="../js/actionModal.js"></script>
 </body>
-<footer id="main-footer"></footer>
-<script src="../js/checkout.js" type="module"></script>
-<script src="/js/actionModal.js" defer></script>
-</body>
-
 </html>
