@@ -1,4 +1,4 @@
-import { getLocalStorage, alertMessagge, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, alertMessage, setLocalStorage } from "./utils.mjs";
 import { checkout } from "./externalServices.mjs";
 
 function formDataToJSON(formElement) {
@@ -99,9 +99,9 @@ const checkoutProcess = {
           } catch (err) {
             // get rid of any preexisting alerts.
             // removeAllAlerts();
-            // for (let message in err.message) {
-            // //   alertMessage(err.message[message]);
-            // }
+            for (let message in err.message) {
+              alertMessage(err.message[message]);
+            }
       
             console.log(err);
         }
