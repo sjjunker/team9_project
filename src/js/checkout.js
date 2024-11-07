@@ -19,5 +19,5 @@ document.forms["checkout"].addEventListener("submit", (e) => {
     e.preventDefault();
     // e.target would contain our form in this case
     checkoutProcess.checkout(e.target);
-    setLocalStorage("so-cart", []);
+    // setLocalStorage("so-cart", []);
 });

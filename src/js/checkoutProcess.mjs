@@ -94,6 +94,8 @@ const checkoutProcess = {
         try {
             const res = await checkout(json);
             console.log(res);
+            // setLocalStorage("so-cart", []);
+            // location.assign("/checkout/success.html");
         } catch (err) {
             alertMessagge(err);
         }
