@@ -1,4 +1,4 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, setLocalStorage } from "./utils.mjs";
 import setBreadcrumbs from "./breadcrumbs";
 import checkoutProcess from "./checkoutProcess.mjs";
 
@@ -19,4 +19,5 @@ document.forms["checkout"].addEventListener("submit", (e) => {
     e.preventDefault();
     // e.target would contain our form in this case
     checkoutProcess.checkout(e.target);
+    // setLocalStorage("so-cart", []);
 });
