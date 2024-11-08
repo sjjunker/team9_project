@@ -14,6 +14,12 @@ export default function renderCartContents() {
   plusMinusSuperscript();
 }
 
+export function renderWishListContents() {
+  const wishItems = getLocalStorage("so-wishlist");
+  const htmlWishItems = wishItems.map((item) => cartItemTemplate(item));
+  document.querySelector(".product-wish-list").innerHTML = htmlWishItems.join("");
+}
+
 //Cart total
 const cartFooter = document.querySelector(".cart-footer");
 const cartTotal = document.querySelector(".cart-total");

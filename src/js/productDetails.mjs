@@ -43,7 +43,7 @@ function addProductToCart() {
 }
 
 //Render to the HTML Page
-function renderProductDetails() {
+export function renderProductDetails() {
   document.querySelector('#productName').innerText = product.Name;
   document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
 
@@ -84,6 +84,7 @@ function renderProductDetails() {
   document.querySelector('#productColorName').innerText = product.Colors[0].ColorName;
   document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple;
   document.querySelector('#addToCart').dataset.id = product.Id;
+  document.querySelector('#addToWishList').dataset.id = product.Id;
 }
 
 //Fill the image array
