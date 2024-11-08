@@ -98,7 +98,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -403,6 +403,7 @@ button {
 }
 
 @media screen and (min-width: 1000px) {
+
   /*Product image for bigger screens*/
   .product-detail img {
     width: 300px;
@@ -655,7 +656,7 @@ input[type="email"]:focus {
   font-size: 1.2em;
 }
 
-.checkout-summary > ul {
+.checkout-summary>ul {
   padding-left: 0;
   list-style-type: none;
 }
@@ -696,7 +697,19 @@ fieldset {
   margin-bottom: 2em;
 }
 
-/* Discount Flag Styles */
+/* alert styles */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+
+.alert>p {
+  margin: 0;
+
 .discount-flag {
   background-color: #fa7500;
   color: white;
