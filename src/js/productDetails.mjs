@@ -108,6 +108,7 @@ function renderProductDetails() {
 
 //Fill the image array
 function fillImageArray() {
+
   imageArray.push(product.Images.PrimaryExtraLarge);
 
   if (product.Images.ExtraImages != null) {
