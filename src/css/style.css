@@ -98,7 +98,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -403,7 +403,6 @@ button {
 }
 
 @media screen and (min-width: 1000px) {
-
   /*Product image for bigger screens*/
   .product-detail img {
     width: 300px;
@@ -642,7 +641,6 @@ input[type="email"]:focus {
 
 /*#endregion ImageSlides */
 
-
 /* checkout styles */
 .checkout-form {
   padding: 0.5em;
@@ -657,7 +655,7 @@ input[type="email"]:focus {
   font-size: 1.2em;
 }
 
-.checkout-summary>ul {
+.checkout-summary > ul {
   padding-left: 0;
   list-style-type: none;
 }
