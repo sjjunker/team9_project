@@ -16,8 +16,10 @@ export default function renderCartContents() {
 
 export function renderWishListContents() {
   const wishItems = getLocalStorage("so-wishlist");
-  const htmlWishItems = wishItems.map((item) => cartItemTemplate(item));
+  const htmlWishItems = wishItems.map((item) => wishListItemTemplate(item));
   document.querySelector(".product-wish-list").innerHTML = htmlWishItems.join("");
+
+  deleteWishItem();
 }
 
 //Cart total
@@ -65,6 +67,22 @@ function deleteItem() {
   })
 }
 
+function deleteWishItem() {
+  //Grab localstorage
+  const wishItems = getLocalStorage("so-wishlist");
+
+  //Add listener to each button
+  wishItems.forEach((item, index) => {
+    const deleteButton = document.getElementById(`button-wishlist${item.Id}`);
+
+    deleteButton.addEventListener("click", () => {
+      const wishListWithoutItem = wishItems.filter((item) => item != wishItems[index]);
+      setLocalStorage("so-wishlist", wishListWithoutItem);
+      renderWishListContents();
+    })
+  })
+}
+
 //Attach eventListener to the plus/minus-button
 function changeItem() {
   //Grab localstorage
@@ -106,6 +124,26 @@ function cartItemTemplate(item) {
   <div><p class="cart-card__quantity">qty: ${item.amount}</p><div class="quantity"><button type="button" class="minus_button" id="Mbutton${item.Id}"><span data-id=${item.Id}>-</span></button><button type="button" class="plus_button" id="Pbutton${item.Id}"><span data-id=${item.Id}>+</span></button></div></div>
   <p class="cart-card__price">$${item.FinalPrice}</p>
   <button type="button" class="delete_button" id="button${item.Id}"><span data-id=${item.Id}>X</span></button>
+</li>`;
+
+  return newItem;
+}
+
+function wishListItemTemplate(item) {
+  const newItem = `<li class="cart-card divider">
+  <a href="#" class="cart-card__image">
+    <img
+      src="${item.Images.PrimarySmall}"
+      alt="${item.Name}"
+    />
+  </a>
+  <a href="#">
+    <h2 class="card__name">${item.Name}</h2>
+  </a>
+  <p class="cart-card__color">${item.Colors[0].ColorName}</p>
+  <button id="addToCart" data-id="344YJ">Add to Cart</button>
+  <p class="cart-card__price">$${item.FinalPrice}</p>
+  <button type="button" class="delete_button" id="button-wishlist${item.Id}"><span data-id=${item.Id}>X</span></button>
 </li>`;
 
   return newItem;
