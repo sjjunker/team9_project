@@ -4,6 +4,11 @@ import { findProductById } from "./externalServices.mjs";
 var product = {};
 var imageArray = [];
 
+//Get single image container
+const imageContainer = document.getElementById("pictureSize");
+//Get image slider container/multiple images
+const slidesContainer = document.querySelector("#slides");
+
 export default async function productDetails(productId) {
   product = await findProductById(productId);
   if (product != null) {
@@ -72,13 +77,28 @@ function renderProductDetails() {
 
   document.querySelector('#productFinalPrice').innerText = `$${product.FinalPrice}`;
 
+  // Updated this section of code for discount flag and positioning it
   if (product.FinalPrice < product.SuggestedRetailPrice) {
+    const discountPercentage = Math.round(100 - (product.FinalPrice / product.SuggestedRetailPrice * 100));
     document.querySelector('#productdiscountPrice').innerHTML = `
-    <span style="text-decoration: line-through; color: grey">$${product.SuggestedRetailPrice}</span>
-    Save $${(product.SuggestedRetailPrice - product.FinalPrice).toFixed(2)}
-  `;
-  }
-  else {
+      <span style="text-decoration: line-through; color: grey">$${product.SuggestedRetailPrice}</span>
+      Save $${(product.SuggestedRetailPrice - product.FinalPrice).toFixed(2)}
+    `;
+
+    // Create discount flag and add it
+    const discountFlag = document.createElement("div");
+    discountFlag.className = "discount-flag";
+    discountFlag.innerText = `${discountPercentage}% OFF`;
+
+    // Position flag depending on single or multi image container
+    if (slidesContainer.style.display === "block") {
+      const firstImageContainer = slidesContainer.querySelector(".slide:first-child");
+      firstImageContainer.appendChild(discountFlag);
+    } else {
+      const imageLargeContainer = document.querySelector('#product-image-large').parentElement;
+      imageLargeContainer.appendChild(discountFlag);
+    }
+  } else {
     document.querySelector('#productdiscountPrice').innerText = "";
   }
 

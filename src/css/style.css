@@ -709,4 +709,23 @@ fieldset {
 
 .alert>p {
   margin: 0;
+
+.discount-flag {
+  background-color: #fa7500;
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pictureSize {
+  position: relative;
 }
