@@ -107,7 +107,8 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button,
+#checkoutSubmit {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -697,6 +698,17 @@ fieldset {
   margin-bottom: 2em;
 }
 
+#checkoutLink {
+  text-decoration: none;
+  color: white;
+  font-size: var(--large-font);
+}
+
+#checkoutLink:visited {
+  color: white;
+  font-size: var(--large-font);
+}
+
 /* alert styles */
 .alert {
   display: flex;
@@ -710,22 +722,22 @@ fieldset {
 .alert>p {
   margin: 0;
 
-.discount-flag {
-  background-color: #fa7500;
-  color: white;
-  font-weight: bold;
-  padding: 40px;
-  border-radius: 50%;
-  position: absolute;
-  top: 10px;
-  z-index: 100;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .discount-flag {
+    background-color: #fa7500;
+    color: white;
+    font-weight: bold;
+    padding: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-#pictureSize {
-  position: relative;
-}
+  #pictureSize {
+    position: relative;
+  }
