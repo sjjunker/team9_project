@@ -69,19 +69,19 @@ function deleteWishItem() {
 }
 
 function wishListItemTemplate(item) {
-  const newItem = `<li class="cart-card divider">
-  <a href="#" class="cart-card__image">
+  const newItem = `<li class="wishlist-card divider">
+  <a href="#" class="wishlist-card__image">
     <img
       src="${item.Images.PrimarySmall}"
       alt="${item.Name}"
     />
   </a>
   <a href="#">
-    <h2 class="card__name">${item.Name}</h2>
+    <p class="card__name">${item.Name}</p>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
   <button id="${item.Id}"><span data-id="${item.Id}">Add to Cart</span></button>
-  <p class="cart-card__price">$${item.FinalPrice}</p>
+  <p class="wishlist-card__price">$${item.FinalPrice}</p>
   <button type="button" class="wishlist-delete_button" id="button-wishlist${item.Id}"><span data-id=${item.Id}>X</span></button>
 </li>`;
 
