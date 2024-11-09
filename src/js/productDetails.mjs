@@ -1,4 +1,4 @@
-import { setLocalStorage, getParam, alertMessage } from "./utils.mjs";
+import { setLocalStorage, getComments, saveComment, getParam, alertMessage } from "./utils.mjs";
 import { findProductById } from "./externalServices.mjs";
 
 var product = {};
@@ -166,3 +166,75 @@ function sliderControls() {
     slidesContainer.scrollLeft -= slideWidth;
   });
 }
+
+
+
+// This function creates comments secton
+function renderCommentsSection(productId) {
+  const commentsSection = document.getElementById('comments-section');
+
+  if (commentsSection) {
+    // Here is where I add form and comments
+    commentsSection.innerHTML = `
+      <h3>Customer Comments</h3>
+      <hr>
+      <ul id="comments-list"></ul>
+      <h4>Add New Comment</h4>
+      <form id="comment-form">
+        <textarea id="comment-input" placeholder="Leave your comment here..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    `;
+
+    // Render existing comments
+    renderComments(productId);
+
+    document.getElementById('comment-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const commentInput = document.getElementById('comment-input');
+      const newComment = commentInput.value.trim();
+
+      if (newComment) {
+        const userName = "Sleep Outside Customer";
+        saveComment(productId, { user: userName, text: newComment });
+        renderComments(productId);
+        commentInput.value = '';
+      }
+    });
+  }
+}
+
+// We render existing comments
+function renderComments(productId) {
+  const commentsList = document.getElementById('comments-list');
+  commentsList.innerHTML = '';
+
+  // This gets comments for the given product ID
+  const comments = getComments(productId);
+
+  // If there are no comments, show a placeholder message
+  if (comments.length === 0) {
+    commentsList.innerHTML = `<p class="no-comments">No customer comments yet</p>`;
+    return;
+  }
+
+  // Render existing comments
+  comments.forEach(comment => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <strong>${comment.user}:</strong>
+      <p>${comment.text}</p>
+      <hr>
+    `;
+    commentsList.appendChild(li);
+  });
+}
+
+
+// This is called after product details are loaded
+document.addEventListener('DOMContentLoaded', async () => {
+  const productId = getParam("product");
+  await productDetails(productId);
+
+  renderCommentsSection(productId);
+});
