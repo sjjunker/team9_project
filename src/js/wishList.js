@@ -57,12 +57,15 @@ function deleteWishItem() {
 
   //Add listener to each button
   wishItems.forEach((item, index) => {
+
     const deleteButton = document.getElementById(`button-wishlist${item.Id}`);
 
     deleteButton.addEventListener("click", () => {
+      console.log("Inside delete button");
       const wishListWithoutItem = wishItems.filter((item) => item != wishItems[index]);
       setLocalStorage("so-wishlist", wishListWithoutItem);
       renderWishListContents();
+      deleteWishItem();
     });
   });
 }
