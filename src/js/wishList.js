@@ -27,7 +27,6 @@ function addProductToCart() {
 
   //Add listener to each button
   wishItems.forEach((product) => {
-    console.log(product.Id);
     const addButton = document.getElementById(product.Id);
 
     addButton.addEventListener("click", () => {

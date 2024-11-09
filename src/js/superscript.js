@@ -1,6 +1,20 @@
 import { getLocalStorage } from "./utils.mjs";
 
-const addToCartButton = document.getElementById("addToCart");
+let addToCartButton;
+
+if (document.body.id == "wishList") {
+  //Wishlist page
+  let wishlist = getLocalStorage("so-wishlist");
+
+  wishlist.forEach(product => {
+    addToCartButton = document.getElementById(product.Id);
+    addToCart(addToCartButton);
+  });
+} else {
+  addToCartButton = document.getElementById("addToCart");
+  addToCart(addToCartButton);
+}
+
 const superscriptDiv = document.createElement("div");
 let cartIconDiv = document.createElement("div");
 
@@ -29,13 +43,15 @@ if (storageCount > 0) {
 }
 
 //Listen for adding items to cart
-if (addToCartButton != null) {
-  addToCartButton.addEventListener("click", () => {
-    setTimeout(() => {
-      storageCount = calculateItems();
-      superscriptDiv.innerText = `${storageCount}`;
-    }, 500);
-  });
+function addToCart(addToCartButton) {
+  if (addToCartButton != null) {
+    addToCartButton.addEventListener("click", () => {
+      setTimeout(() => {
+        storageCount = calculateItems();
+        superscriptDiv.innerText = `${storageCount}`;
+      }, 500);
+    });
+  }
 }
 
 //Listen for removing items from cart
