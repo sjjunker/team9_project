@@ -1,5 +1,7 @@
-import { renderWishListContents } from "./shoppingCart.mjs";
+import { renderWishListContents } from "./wishList.js";
 import { loadHeaderFooter } from "./utils.mjs";
+import setBreadcrumbs from "./breadcrumbs";
 
-renderWishListContents();
+setBreadcrumbs("", 0);
 loadHeaderFooter();
+renderWishListContents();

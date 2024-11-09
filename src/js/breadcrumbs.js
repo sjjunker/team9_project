@@ -9,5 +9,7 @@ export default function setBreadcrumbs(category, productQuanitity) {
     breadcrumb.innerHTML = `Home &#8594; ${category}`;
   } else if (document.body.id == "product-list") {
     breadcrumb.innerHTML = `Home &#8594; ${category} &#8594; (${productQuanitity} items)`;
+  } else if (document.body.id == "wishList") {
+    breadcrumb.innerHTML = `Home &#8594; Cart &#8594; Wishlist`;
   }
 }

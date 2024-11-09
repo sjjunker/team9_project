@@ -11,9 +11,13 @@ superscriptDiv.className = "superscript";
 function calculateItems() {
   let cart = getLocalStorage("so-cart");
   let count = 0;
-  cart.forEach((item) => {
-    count += item.amount;
-  });
+
+  if (cart != null) {
+    cart.forEach((item) => {
+      count += item.amount;
+    });
+  }
+
   return count;
 }
 
