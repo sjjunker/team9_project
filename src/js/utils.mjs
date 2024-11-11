@@ -100,3 +100,20 @@ export function removeAllAlerts() {
   const alerts = document.querySelectorAll(".alert");
   alerts.forEach((alert) => document.querySelector("main").removeChild(alert));
 }
+
+
+// Customer comments get and save functions
+export function getComments(productId) {
+  const comments = getLocalStorage('comments') || {};
+  return comments[productId] || [];
+}
+
+export function saveComment(productId, comment) {
+  const comments = getLocalStorage('comments') || {};
+  if (!comments[productId]) {
+    comments[productId] = [];
+  }
+  comments[productId].push(comment);
+  setLocalStorage('comments', comments);
+}
+
