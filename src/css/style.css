@@ -107,7 +107,8 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button,
+#checkoutSubmit {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -642,7 +643,6 @@ input[type="email"]:focus {
 
 /*#endregion ImageSlides */
 
-
 /* checkout styles */
 .checkout-form {
   padding: 0.5em;
@@ -698,6 +698,112 @@ fieldset {
   margin-bottom: 2em;
 }
 
+#checkoutLink {
+  text-decoration: none;
+  color: white;
+  font-size: var(--large-font);
+}
+
+#checkoutLink:visited {
+  color: white;
+  font-size: var(--large-font);
+}
+
+/* alert styles */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+
+.alert>p {
+  margin: 0;
+}
+
+  .discount-flag {
+    background-color: #fa7500;
+    color: white;
+    font-weight: bold;
+    padding: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pictureSize {
+    position: relative;
+  }
+
+  /* comments form styles */
+#comment-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Textarea for comments */
+#comment-input {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Textarea focus state */
+#comment-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 8px var(--secondary-color);
+}
+
+/* Styling for the comment button */
+#comment-form button {
+  
+  margin-bottom: 2rem;
+}
+
+
+/* Placeholder no comments yet */
+.no-comments {
+  font-style: italic;
+  color: gray;
+  margin-top: 10px;
+}
+
+/* Comment list styling */
+#comments-list {
+  margin-top: 20px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#comments-list li {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+=======
 /* wish list */
 #addToWishList {
   margin-top: 50px;
