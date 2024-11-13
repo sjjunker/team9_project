@@ -1,12 +1,5 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\cart",
-    "\\src\\checkout",
-    "\\src\\js",
-    "\\src\\product_pages"
-  ],
-  "SelectedNode": "\\src\\js\\shake.js",
+  "ExpandedNodes": ["", "\\src", "\\src\\css", "\\src\\js"],
+  "SelectedNode": "\\src\\css\\style.css",
   "PreviewInSolutionExplorer": false
 }

@@ -4,14 +4,17 @@ import { decrementSuperscript, plusMinusSuperscript } from "./superscript";
 //Show cart items to screen
 export default function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
-  displayTotal(cartItems);
-  deleteItem();
-  changeItem();
-  decrementSuperscript();
-  plusMinusSuperscript();
+  if (cartItems != null) {
+    const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+    document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+    displayTotal(cartItems);
+    deleteItem();
+    changeItem();
+    decrementSuperscript();
+    plusMinusSuperscript();
+  }
 }
 
 //Cart total
