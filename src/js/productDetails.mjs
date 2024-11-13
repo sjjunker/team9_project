@@ -1,8 +1,9 @@
 import { setLocalStorage, getParam } from "./utils.mjs";
 import { findProductById } from "./productData.mjs";
 
-var product = {};
-var imageArray = [];
+let product = {};
+let imageArray = [];
+let selected = "";
 
 export default async function productDetails(productId) {
   product = await findProductById(productId);
@@ -31,6 +32,15 @@ function addProductToCart() {
   // Add the new product to the cart array or add to existing.
   const productId = getParam("product");
   const hy = cart.find((item) => item.Id === productId);
+  let temp = product.Colors[0];
+  if (selected != "") {
+    product.Colors.forEach((color) => {
+      if (color.ColorName = selected) {
+        product.Colors[0] = color;
+        color = temp;
+      }
+    });
+  }
   if (hy != null) {
     hy.amount += 1;
   } else {
@@ -81,7 +91,25 @@ function renderProductDetails() {
     document.querySelector('#productdiscountPrice').innerText = "";
   }
 
-  document.querySelector('#productColorName').innerText = product.Colors[0].ColorName;
+  /*collects each different color property and displays them in a div (ImNam) with
+  their name and a small picture.*/
+  product.Colors.forEach((color) => {
+    let name = document.createElement('p');
+    name.innerText = color.ColorName;
+    let colorImg = document.createElement('img');
+    colorImg.src = color.ColorChipImageSrc;
+    let ImNam = document.createElement('div');
+    ImNam.addEventListener('click', () => {
+      document.querySelectorAll('div').forEach((div) => {
+      div.classList.remove("click");
+    });
+      selected = color.ColorName;
+      ImNam.classList.add("click");
+    });
+    ImNam.appendChild(colorImg);
+    ImNam.appendChild(name);
+    document.querySelector('#productColorName').appendChild(ImNam);
+  });
   document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple;
   document.querySelector('#addToCart').dataset.id = product.Id;
 }
@@ -108,7 +136,7 @@ function renderImages(selector) {
       listLi.innerHTML =
         `<li>
       <img class="slidePic"
-        src=${image.Src} 
+        src=${image.Src}
         alt=${image.Title}
       />
     </li>`;
@@ -117,7 +145,7 @@ function renderImages(selector) {
       listLi.innerHTML =
         `<li>
       <img class="slidePic"
-        src=${image} 
+        src=${image}
         alt=${""}
       />
     </li>`;
