@@ -11,19 +11,19 @@ const imageContainer = document.getElementById("pictureSize");
 const slidesContainer = document.querySelector("#slides");
 
 export default async function productDetails(productId) {
-    product = await findProductById(productId);
-    if (product != null) {
-        fillImageArray();
-        renderProductDetails();
-        sliderControls();
-        document.getElementById("addToCart").addEventListener("click", addProductToCart);
-        document.getElementById("addToWishList").addEventListener("click", addProductToWishList);
-    }
-    else {
-        document.querySelector('#productNameWithoutBrand').innerText = "Error";
-        document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
-        document.querySelector('#addToCart').remove();
-    }
+  product = await findProductById(productId);
+  if (product != null) {
+    fillImageArray();
+    renderProductDetails();
+    sliderControls();
+    document.getElementById("addToCart").addEventListener("click", addProductToCart);
+    document.getElementById("addToWishList").addEventListener("click", addProductToWishList);
+  }
+  else {
+    document.querySelector('#productNameWithoutBrand').innerText = "Error";
+    document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
+    document.querySelector('#addToCart').remove();
+  }
 }
 
 function addProductToCart() {
@@ -113,92 +113,109 @@ function renderProductDetails() {
     document.querySelector('#productdiscountPrice').innerText = "";
   }
 
-  /*collects each different color property and displays them in a div (ImNam) with
-  their name and a small picture.*/
-  product.Colors.forEach((color) => {
-    let name = document.createElement('p');
-    name.innerText = color.ColorName;
-    let colorImg = document.createElement('img');
-    colorImg.src = color.ColorChipImageSrc;
-    let ImNam = document.createElement('div');
-    ImNam.addEventListener('click', () => {
-      document.querySelectorAll('div').forEach((div) => {
-      div.classList.remove("click");
-    });
-      selected = color.ColorName;
-      ImNam.classList.add("click");
-    });
-    ImNam.appendChild(colorImg);
-    ImNam.appendChild(name);
-    document.querySelector('#productColorName').appendChild(ImNam);
-  });
+  listColors();
+
   document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple;
   document.querySelector('#addToCart').dataset.id = product.Id;
   document.querySelector('#addToWishList').dataset.id = product.Id;
 }
 
+function listColors() {
+  /*collects each different color property and displays them in a div (ImNam) with
+  their name and a small picture.*/
+  let colorDOMElement = document.querySelector('#productColorName');
+  colorDOMElement.innerHTML = "";
+
+  product.Colors.forEach((color) => {
+    //Name
+    let name = document.createElement('p');
+    name.innerText = color.ColorName;
+
+    //Image
+    let colorImg = document.createElement('img');
+    colorImg.src = color.ColorChipImageSrc;
+
+    //Created Colors Container
+    let ImNam = document.createElement('div');
+
+    //Listener
+    ImNam.addEventListener('click', () => {
+      document.querySelectorAll('div').forEach((div) => {
+        div.classList.remove("click");
+      });
+
+      selected = color.ColorName;
+      ImNam.classList.add("click");
+    });
+
+    ImNam.appendChild(colorImg);
+    ImNam.appendChild(name);
+    colorDOMElement.appendChild(ImNam);
+  });
+}
+
 function addProductToWishList() {
-    // Retrieve the existing wishlist from localStorage, ensure it's an array or default to an empty array
-    let wishList = JSON.parse(localStorage.getItem("so-wishlist"));
-    console.log(wishList);
-    // Check if wishList is not an array, reset to an empty array if needed
-    if (!Array.isArray(wishList)) {
-        wishList = [];
-    }
+  // Retrieve the existing wishlist from localStorage, ensure it's an array or default to an empty array
+  let wishList = JSON.parse(localStorage.getItem("so-wishlist"));
+  console.log(wishList);
+  // Check if wishList is not an array, reset to an empty array if needed
+  if (!Array.isArray(wishList)) {
+    wishList = [];
+  }
 
-    // Add the new product to the wish list array or update existing.
-    const wishListId = getParam("product");
-    console.log(wishListId);
-    const existingProduct = wishList.find((item) => item.Id === wishListId);
-    if (existingProduct === undefined) {
-        wishList.push(product); // Add product if it's not already in the wishlist
-    }
+  // Add the new product to the wish list array or update existing.
+  const wishListId = getParam("product");
+  console.log(wishListId);
+  const existingProduct = wishList.find((item) => item.Id === wishListId);
+  if (existingProduct === undefined) {
+    wishList.push(product); // Add product if it's not already in the wishlist
+  }
 
-    // Save the updated wish list back to localStorage
-    setLocalStorage("so-wishlist", wishList);
+  // Save the updated wish list back to localStorage
+  setLocalStorage("so-wishlist", wishList);
 
 }
 
 //Fill the image array
 function fillImageArray() {
 
-    imageArray.push(product.Images.PrimaryExtraLarge);
+  imageArray.push(product.Images.PrimaryExtraLarge);
 
-    if (product.Images.ExtraImages != null) {
-        product.Images.ExtraImages.forEach((image) => {
-            imageArray.push(image);
-        });
-    }
+  if (product.Images.ExtraImages != null) {
+    product.Images.ExtraImages.forEach((image) => {
+      imageArray.push(image);
+    });
+  }
 }
 
 //Add images to the unordered list
 function renderImages(selector) {
-    imageArray.forEach(image => {
-        const listLi = document.createElement("li");
-        listLi.className = "slide";
+  imageArray.forEach(image => {
+    const listLi = document.createElement("li");
+    listLi.className = "slide";
 
-        //If extra image
-        if (image.Src != null) {
-            listLi.innerHTML =
-                `<li>
+    //If extra image
+    if (image.Src != null) {
+      listLi.innerHTML =
+        `<li>
 <img class="slidePic"
 src=${image.Src} 
 alt=${image.Title}
 />
 </li>`;
-        } else {
-            //If original image
-            listLi.innerHTML =
-                `<li>
+    } else {
+      //If original image
+      listLi.innerHTML =
+        `<li>
 <img class="slidePic"
 src=${image} 
 alt=${""}
 />
 </li>`;
-        }
+    }
 
-        selector.appendChild(listLi);
-    });
+    selector.appendChild(listLi);
+  });
 }
 
 //Control the slider
