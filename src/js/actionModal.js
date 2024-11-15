@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "block";
   }
 
+  //send to signup page
+  document.querySelector("#registerNow").addEventListener("click", () => {
+    window.location.href = "../singup/index.html";
+  });
+
   // X button to close
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";

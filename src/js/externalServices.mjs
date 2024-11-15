@@ -34,3 +34,17 @@ export async function checkout(orderObject) {
   //Stringify and pass to fetch using url
   return await fetch(baseURL + "checkout/", options).then(convertToJson);
 }
+
+export async function signUp(cred) {
+  //create custom options object
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cred),
+  };
+
+  //Stringify and pass to fetch using url
+  return await fetch(baseURL + "users/", options).then(convertToJson);
+}

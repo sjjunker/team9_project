@@ -875,6 +875,25 @@ fieldset {
   margin-left: 10px;
 }
 
+#signup {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+#signup:focus {
+  2px solid var(--primary-color);
+}
+
+#signup input {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#signup label {
+  margin-left: 1rem;
+  
 .product__color img {
   padding: 2px 4px 2px 4px;
 }
