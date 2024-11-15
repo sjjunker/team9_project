@@ -8,16 +8,14 @@ import setBreadcrumbs from "./breadcrumbs.js";
 loadHeaderFooter();
 
 // Call the function to load and display alerts
-document.addEventListener("DOMContentLoaded", () => {
-  loadAlerts();
-});
+document.addEventListener("DOMContentLoaded", loadAlerts);
 
 //Load product details
 const productId = getParam("product");
 productDetails(productId);
-document.addEventListener("resize", () => {
-  productDetails(productId);
-});
+
+//Resize event listener
+document.addEventListener("resize", productDetails(productId));
 
 //Set breadcrumbs
 async function breadcrumbs() {

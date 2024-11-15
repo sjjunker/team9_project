@@ -1,11 +1,12 @@
-let addToCartButton;
 import { getLocalStorage } from "./utils.mjs";
+
+let addToCartButton;
 
 if (document.body.id == "wishList") {
   //Wishlist page
   let wishlist = getLocalStorage("so-wishlist");
 
-  wishlist.forEach(product => {
+  wishlist.forEach((product) => {
     addToCartButton = document.getElementById(product.Id);
     shake(addToCartButton);
   });

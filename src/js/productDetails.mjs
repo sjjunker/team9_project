@@ -1,28 +1,38 @@
 import { setLocalStorage, getComments, saveComment, getParam, alertMessage } from "./utils.mjs";
 import { findProductById } from "./externalServices.mjs";
 
-var product = {};
-var imageArray = [];
+let product = {};
+let imageArray = [];
+let selected = "";
+let heartIsFilled = false;
 
 //Get single image container
 const imageContainer = document.getElementById("pictureSize");
 //Get image slider container/multiple images
 const slidesContainer = document.querySelector("#slides");
+//Set wishlist button icon
+let wishIcon = document.getElementById("addToWishList");
 
 export default async function productDetails(productId) {
-    product = await findProductById(productId);
-    if (product != null) {
-        fillImageArray();
-        renderProductDetails();
-        sliderControls();
-        document.getElementById("addToCart").addEventListener("click", addProductToCart);
-        document.getElementById("addToWishList").addEventListener("click", addProductToWishList);
-    }
-    else {
-        document.querySelector('#productNameWithoutBrand').innerText = "Error";
-        document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
-        document.querySelector('#addToCart').remove();
-    }
+  product = await findProductById(productId);
+  if (product != null) {
+    fillImageArray();
+    renderProductDetails();
+    renderCommentsSection(productId);
+
+    document.getElementById("addToCart").addEventListener("click", addProductToCart);
+
+    sliderControls();
+
+    wishIcon.innerHTML = `<img src="/images/white-heart.webp" alt="heart" />`;
+    wishIcon.addEventListener("click", setWishIcon);
+    wishIcon.addEventListener("click", addProductToWishList);
+  }
+  else {
+    document.querySelector('#productNameWithoutBrand').innerText = "Error";
+    document.querySelector('#productDescriptionHtmlSimple').innerText = "Product does not exist";
+    document.querySelector('#addToCart').remove();
+  }
 }
 
 function addProductToCart() {
@@ -37,11 +47,23 @@ function addProductToCart() {
   // Add the new product to the cart array or add to existing.
   const productId = getParam("product");
   const hy = cart.find((item) => item.Id === productId);
+  let temp = product.Colors[0];
+
   if (hy != null) {
     hy.amount += 1;
   } else {
     product.amount = 1;
     cart.push(product);
+  }
+
+  //Set colors
+  if (selected != "") {
+    product.Colors.forEach((color) => {
+      if (color.ColorName = selected) {
+        product.Colors[0] = color;
+        color = temp;
+      }
+    });
   }
 
   // Save the updated cart back to localStorage
@@ -54,6 +76,7 @@ function renderProductDetails() {
   document.querySelector('#productName').innerText = product.Name;
   document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
 
+  //Set image
   if (screen.width > 1000 && imageArray.length > 1) {
     //Remove picture
     document.getElementById("pictureSize").style.display = "none";
@@ -103,74 +126,97 @@ function renderProductDetails() {
     document.querySelector('#productdiscountPrice').innerText = "";
   }
 
-  document.querySelector('#productColorName').innerText = product.Colors[0].ColorName;
+  listColors();
+
   document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple;
-  document.querySelector('#addToCart').dataset.id = product.Id;
-  document.querySelector('#addToWishList').dataset.id = product.Id;
 }
 
-function addProductToWishList() {
-    // Retrieve the existing wishlist from localStorage, ensure it's an array or default to an empty array
-    let wishList = JSON.parse(localStorage.getItem("so-wishlist"));
-    console.log(wishList);
-    // Check if wishList is not an array, reset to an empty array if needed
-    if (!Array.isArray(wishList)) {
-        wishList = [];
-    }
+function listColors() {
+  /*collects each different color property and displays them in a div (ImNam) with
+  their name and a small picture.*/
+  let colorDOMElement = document.querySelector('#productColorName');
+  colorDOMElement.innerHTML = "";
 
-    // Add the new product to the wish list array or update existing.
-    const wishListId = getParam("product");
-    console.log(wishListId);
-    const existingProduct = wishList.find((item) => item.Id === wishListId);
-    if (existingProduct === undefined) {
-        wishList.push(product); // Add product if it's not already in the wishlist
-    }
+  product.Colors.forEach((color) => {
+    //Name
+    let name = document.createElement('p');
+    name.innerText = color.ColorName;
 
-    // Save the updated wish list back to localStorage
-    setLocalStorage("so-wishlist", wishList);
+    //Image
+    let colorImg = document.createElement('img');
+    colorImg.src = color.ColorChipImageSrc;
 
+    //Created Colors Container
+    let ImNam = document.createElement('div');
+
+    //Listener
+    ImNam.addEventListener('click', () => {
+      document.querySelectorAll('div').forEach((div) => {
+        div.classList.remove("click");
+      });
+
+      selected = color.ColorName;
+      ImNam.classList.add("click");
+    });
+
+    ImNam.appendChild(colorImg);
+    ImNam.appendChild(name);
+    colorDOMElement.appendChild(ImNam);
+  });
+}
+
+export function addProductToWishList() {
+  // Retrieve the existing wishlist from localStorage, ensure it's an array or default to an empty array
+  let wishList = JSON.parse(localStorage.getItem("so-wishlist"));
+
+  // Check if wishList is not an array, reset to an empty array if needed
+  if (!Array.isArray(wishList)) {
+    wishList = [];
+  }
+
+  // Add the new product to the wish list array or update existing.
+  const wishListId = getParam("product");
+
+  const existingProduct = wishList.find((item) => item.Id === wishListId);
+  if (existingProduct === undefined) {
+    wishList.push(product); // Add product if it's not already in the wishlist
+  }
+
+  // Save the updated wish list back to localStorage
+  setLocalStorage("so-wishlist", wishList);
 }
 
 //Fill the image array
 function fillImageArray() {
+  imageArray = [];
 
-    imageArray.push(product.Images.PrimaryExtraLarge);
+  imageArray.push(product.Images.PrimaryExtraLarge);
 
-    if (product.Images.ExtraImages != null) {
-        product.Images.ExtraImages.forEach((image) => {
-            imageArray.push(image);
-        });
-    }
+  if (product.Images.ExtraImages != null) {
+    product.Images.ExtraImages.forEach((image) => {
+      imageArray.push(image);
+    });
+  }
 }
 
 //Add images to the unordered list
 function renderImages(selector) {
-    imageArray.forEach(image => {
-        const listLi = document.createElement("li");
-        listLi.className = "slide";
+  imageArray.forEach(image => {
+    const listLi = document.createElement("li");
+    listLi.className = "slide";
 
-        //If extra image
-        if (image.Src != null) {
-            listLi.innerHTML =
-                `<li>
-<img class="slidePic"
-src=${image.Src} 
-alt=${image.Title}
-/>
-</li>`;
-        } else {
-            //If original image
-            listLi.innerHTML =
-                `<li>
-<img class="slidePic"
-src=${image} 
-alt=${""}
-/>
-</li>`;
-        }
+    //If extra image
+    if (image.Src != null) {
+      listLi.innerHTML =
+        `<li><img class="slidePic"src=${image.Src} alt=${image.Title}/></li>`;
+    } else {
+      //If original image
+      listLi.innerHTML =
+        `<li><img class="slidePic"src=${image} alt=${""}/></li>`;
+    }
 
-        selector.appendChild(listLi);
-    });
+    selector.appendChild(listLi);
+  });
 }
 
 //Control the slider
@@ -190,8 +236,6 @@ function sliderControls() {
     slidesContainer.scrollLeft -= slideWidth;
   });
 }
-
-
 
 // This function creates comments secton
 function renderCommentsSection(productId) {
@@ -222,7 +266,7 @@ function renderCommentsSection(productId) {
         const userName = "Sleep Outside Customer";
         saveComment(productId, { user: userName, text: newComment });
         renderComments(productId);
-        commentInput.value = '';
+        commentInput.value = "";
       }
     });
   }
@@ -254,11 +298,14 @@ function renderComments(productId) {
   });
 }
 
-
-// This is called after product details are loaded
-document.addEventListener('DOMContentLoaded', async () => {
-  const productId = getParam("product");
-  await productDetails(productId);
-
-  renderCommentsSection(productId);
-});
+function setWishIcon() {
+  console.log("A");
+  if (heartIsFilled) {
+    console.log("in if");
+    wishIcon.innerHTML = `<img src="/images/white-heart.webp" alt="empty heart" />`;
+  } else {
+    console.log("in else");
+    wishIcon.innerHTML = `<img src="/images/green-heart.webp" alt="filled heart" />`;
+  }
+  heartIsFilled = !heartIsFilled;
+}
