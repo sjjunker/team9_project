@@ -2,23 +2,14 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 export default async function wishListDetails() {
   renderWishListContents();
-
-
-  if (document.body.id == "wishList") {
-    deleteWishItem();
-    addProductToCart();
-    console.log("in the wish list");
-  } else {
-    document.getElementById("addToWishList").addEventListener("click", addProductToWishList);
-  }
-
-  console.log("past the if/else");
+  deleteWishItem();
+  addProductToCart();
 }
 
 function addProductToCart() {
   //Grab localstorage
   const wishItems = getLocalStorage("so-wishlist");
-  const cart = JSON.parse(localStorage.getItem("so-cart"));
+  let cart = JSON.parse(localStorage.getItem("so-cart"));
 
   // Check if cart is not an array, reset to an empty array if needed
   if (!Array.isArray(cart)) {
@@ -45,10 +36,11 @@ function addProductToCart() {
   });
 }
 
-export function renderWishListContents() {
+function renderWishListContents() {
   const wishItems = getLocalStorage("so-wishlist");
   const htmlWishItems = wishItems.map((item) => wishListItemTemplate(item));
-  document.querySelector(".product-wish-list").innerHTML = htmlWishItems.join("");
+  document.querySelector(".product-wish-list").innerHTML =
+    htmlWishItems.join("");
 }
 
 function deleteWishItem() {
@@ -57,12 +49,12 @@ function deleteWishItem() {
 
   //Add listener to each button
   wishItems.forEach((item, index) => {
-
     const deleteButton = document.getElementById(`button-wishlist${item.Id}`);
 
     deleteButton.addEventListener("click", () => {
-      console.log("Inside delete button");
-      const wishListWithoutItem = wishItems.filter((item) => item != wishItems[index]);
+      const wishListWithoutItem = wishItems.filter(
+        (wishItem) => wishItem != wishItems[index]
+      );
       setLocalStorage("so-wishlist", wishListWithoutItem);
       renderWishListContents();
       deleteWishItem();
