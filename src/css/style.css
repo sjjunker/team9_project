@@ -723,27 +723,27 @@ fieldset {
   margin: 0;
 }
 
-  .discount-flag {
-    background-color: #fa7500;
-    color: white;
-    font-weight: bold;
-    padding: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.discount-flag {
+  background-color: #fa7500;
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  #pictureSize {
-    position: relative;
-  }
+#pictureSize {
+  position: relative;
+}
 
-  /* comments form styles */
+/* comments form styles */
 #comment-form {
   margin-top: 20px;
   display: flex;
@@ -777,7 +777,7 @@ fieldset {
 
 /* Styling for the comment button */
 #comment-form button {
-  
+
   margin-bottom: 2rem;
 }
 
@@ -803,7 +803,9 @@ fieldset {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 =======
+
 /* wish list */
 #addToWishList {
   margin-top: 50px;
@@ -847,4 +849,24 @@ fieldset {
 
 .wish-products h2 {
   margin-left: 10px;
+}
+
+#signup {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+#signup:focus {
+  2px solid var(--primary-color);
+}
+
+#signup input {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#signup label {
+  margin-left: 1rem;
 }
