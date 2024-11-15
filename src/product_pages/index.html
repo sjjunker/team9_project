@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="../css/style.css" />
 
-  <script src="../js/product.js" type="module"></script>
+  <script src="../js/product.js" type="module" defer></script>
   <script src="../js/shake.js" type="module" defer></script>
   <script src="../js/superscript.js" type="module" defer></script>
 </head>
@@ -26,32 +26,35 @@
       <h2 class="divider" id="productNameWithoutBrand"></h2>
 
       <!--Images-->
-      <section class="slider-wrapper divider" id="slides">
-        <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
+      <div id="picture-div">
+        <button id="addToWishList"></button>
+        <section class="slider-wrapper divider" id="slides">
+          <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
 
-        <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
+          <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
 
-        <ul class="slides-container" id="slides-container"></ul>
-      </section>
+          <ul class="slides-container" id="slides-container"></ul>
+        </section>
 
-      <picture id="pictureSize">
-        <source id="product-image-small" media="(max-width: 500px)" srcset="" />
-        <source id="product-image-medium" media="(max-width: 1000px)" srcset="" />
-        <img id="product-image-large" class="divider" src="" alt="" />
-      </picture>
+        <picture id="pictureSize">
+          <source id="product-image-small" media="(max-width: 500px)" srcset="" />
+          <source id="product-image-medium" media="(max-width: 1000px)" srcset="" />
+          <img id="product-image-large" class="divider" src="" alt="" />
+        </picture>
+      </div>
+
       <!--Images-->
 
       <p class="product-card__price" id="productFinalPrice"></p>
 
       <p class="product-card__discount" id="productdiscountPrice"></p>
 
-        <div class="product__color" id="productColorName"></div>
+      <div class="product__color" id="productColorName"></div>
 
       <p class="product__description" id="productDescriptionHtmlSimple"></p>
 
       <div class="product-detail__add">
-        <button id="addToCart" data-id="344YJ">Add to Cart</button>
-        <button id="addToWishList" data-id="344YJ">❤</button>
+        <button id="addToCart">Add to Cart</button>
       </div>
     </section>
     <section id="comments-section" class="comments"></section>
@@ -59,7 +62,6 @@
 
   <footer id="main-footer"></footer>
   <script src="/js/search.js" type="module"></script>
-  <script src="/js/actionModal.js" defer></script>
 </body>
 
 </html>

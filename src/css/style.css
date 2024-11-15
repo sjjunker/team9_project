@@ -214,6 +214,7 @@ button,
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+  width: 65vw;
 }
 
 .product-list a {
@@ -235,7 +236,8 @@ button,
 }
 
 #recommended-product-list li {
-  border: 3px solid var(--primary-color);
+  box-shadow: 5px 5px 0.5em var(--secondary-color),
+    -0.5em 0 0.5em var(--primary-color);
 }
 
 .product-card h2,
@@ -727,27 +729,27 @@ fieldset {
   margin: 0;
 }
 
-  .discount-flag {
-    background-color: #fa7500;
-    color: white;
-    font-weight: bold;
-    padding: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.discount-flag {
+  background-color: #fa7500;
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  #pictureSize {
-    position: relative;
-  }
+#pictureSize {
+  position: relative;
+}
 
-  /* comments form styles */
+/* comments form styles */
 #comment-form {
   margin-top: 20px;
   display: flex;
@@ -781,10 +783,8 @@ fieldset {
 
 /* Styling for the comment button */
 #comment-form button {
-  
   margin-bottom: 2rem;
 }
-
 
 /* Placeholder no comments yet */
 .no-comments {
@@ -807,13 +807,35 @@ fieldset {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-=======
+
 /* wish list */
+#wish-link,
+#wish-link:visited {
+  text-decoration: none;
+  color: white;
+  font-size: var(--font-base);
+  font-family: var(--font-body);
+  background: var(--secondary-color);
+  padding: 1rem;
+}
+
+
+
+#picture-div {
+  position: relative;
+}
+
 #addToWishList {
-  margin-top: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 195px;
+  background: none;
+  position: absolute;
+  top: -1rem;
+  right: -2rem;
+  z-index: 1;
+}
+
+#addToWishList img {
+  height: auto;
+  width: 5rem;
 }
 
 .wishlist-card {
@@ -854,34 +876,34 @@ fieldset {
 }
 
 .product__color img {
-    padding: 2px 4px 2px 4px;
+  padding: 2px 4px 2px 4px;
 }
 
 .product__color {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-    .product__color div {
-        padding: 5px 0 5px 0;
-    }
+.product__color div {
+  padding: 5px 0 5px 0;
+}
 
-    .product__color p {
-        margin: 0;
-        text-align: center;
-    }
+.product__color p {
+  margin: 0;
+  text-align: center;
+}
 
-    .product__color img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.product__color img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .product__color div:hover {
-        outline: solid 2px blue;
-        cursor: pointer;
-    }
+.product__color div:hover {
+  outline: solid 2px blue;
+  cursor: pointer;
+}
 
 .click {
-    outline: solid 2px red;
+  outline: solid 2px red;
 }

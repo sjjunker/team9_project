@@ -40,4 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("visited", "true");
     }
   });
+
+  // Close on register now button click
+  registerNow.addEventListener("click", () => {
+    modal.style.display = "none";
+    localStorage.setItem("visited", "true");
+  });
 });
