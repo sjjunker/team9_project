@@ -883,7 +883,7 @@ fieldset {
 }
 
 #signup:focus {
-  2px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 #signup input {
@@ -893,6 +893,7 @@ fieldset {
 
 #signup label {
   margin-left: 1rem;
+}
   
 .product__color img {
   padding: 2px 4px 2px 4px;
