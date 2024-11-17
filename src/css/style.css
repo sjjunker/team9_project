@@ -894,7 +894,7 @@ fieldset {
 #signup label {
   margin-left: 1rem;
 }
-  
+
 .product__color img {
   padding: 2px 4px 2px 4px;
 }
@@ -926,4 +926,11 @@ fieldset {
 
 .click {
   outline: solid 2px red;
+}
+
+/*Login anc orders*/
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
 }
