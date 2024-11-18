@@ -92,7 +92,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Images.PrimarySmall}"
+      src="${item.Images[0]}"
       alt="${item.Name}"
     />
   </a>
