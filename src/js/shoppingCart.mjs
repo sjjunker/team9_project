@@ -3,7 +3,7 @@ import { decrementSuperscript, plusMinusSuperscript } from "./superscript";
 
 //Show cart items to screen
 export default function renderCartContents() {
-  const cartItems = [];
+  let cartItems = [];
   cartItems = getLocalStorage("so-cart");
 
   if (cartItems != null) {
