@@ -51,18 +51,18 @@ export async function signUp(cred) {
 
 
 //Login credentials
-export async function loginRequest(credentials) {
+export async function loginRequest(user) {
   //create custom options object
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(credentials),
+    body: JSON.stringify(user),
   };
 
   //Stringify and pass to fetch using url
-  const response = fetch(baseURL + "login", options).then(convertToJson);
+  const response = await fetch(baseURL + "login", options).then(convertToJson);
   return response.accessToken;
 }
 

@@ -5,7 +5,4 @@ import { checkLogin } from "./auth.mjs";
 loadHeaderFooter();
 
 const token = checkLogin();
-const orderTable = document.getElementById("order-table");
-
-currentOrders(orderTable, token);
-
+currentOrders("#order-table", token);

@@ -1,12 +1,13 @@
 import { loginRequest } from "./externalServices.mjs";
 import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 const tokenKey = "so-token";
 
 export async function login(credentials, redirect = "/") {
     try {
         const token = await loginRequest(credentials);
+        console.log(token);
         setLocalStorage(tokenKey, token);
 
         //Send home if no redirect provided
@@ -19,6 +20,7 @@ export async function login(credentials, redirect = "/") {
 export function checkLogin() {
     const token = getLocalStorage(tokenKey);
     const valid = isTokenValid(token);
+    console.log(token);
 
     if (valid) {
         return token;
@@ -32,7 +34,7 @@ export function checkLogin() {
 
 function isTokenValid(token) {
     if (token) {
-        const decoded = jwt_decode(token);
+        const decoded = jwtDecode(token);
         let currentDate = new Date();
 
         if (decoded.exp * 1000 < currentDate.getTime()) {

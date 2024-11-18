@@ -9,7 +9,7 @@ let redirect = getParam("redirect");
 //Login event listener
 const loginButton = document.getElementById("login-button");
 
-loginButton.addEventListener("submit", (e) => {
+loginButton.addEventListener("click", (e) => {
     e.preventDefault();
 
     const email = document.getElementById("email").value;
