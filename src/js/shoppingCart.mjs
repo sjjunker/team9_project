@@ -6,7 +6,7 @@ export default function renderCartContents() {
   let cartItems = [];
   cartItems = getLocalStorage("so-cart");
 
-  if (cartItems != null) {
+  if (cartItems.length > 0) {
     const htmlItems = cartItems.map((item) => cartItemTemplate(item));
     document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
