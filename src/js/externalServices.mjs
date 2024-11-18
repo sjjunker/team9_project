@@ -48,3 +48,32 @@ export async function signUp(cred) {
   //Stringify and pass to fetch using url
   return await fetch(baseURL + "users/", options).then(convertToJson);
 }
+
+
+//Login credentials
+export async function loginRequest(user) {
+  //create custom options object
+  const options = {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+  };
+
+  //Stringify and pass to fetch using url
+  const response = await fetch(baseURL + "login", options).then(convertToJson);
+  return response.accessToken;
+}
+
+//Get orders from server
+export async function getOrders(token) {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await fetch(baseURL + "orders", options).then(convertToJson);
+  return response;
+}
