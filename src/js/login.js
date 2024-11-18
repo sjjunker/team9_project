@@ -10,10 +10,10 @@ let redirect = getParam("redirect");
 const loginButton = document.getElementById("login-button");
 
 loginButton.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    login({ email, password }, redirect);
+  login({ email, password }, redirect);
 });
